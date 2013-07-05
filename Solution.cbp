@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="MageEngine" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="Build/Debug/MageEngine" prefix_auto="1" extension_auto="1" />
+				<Option object_output="Intermediate/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="Build/Release/MageEngine" prefix_auto="1" extension_auto="1" />
+				<Option object_output="Intermediate/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="`sdl-config --cflags`" />
+			<Add option="-Wall" />
+		</Compiler>
+		<Linker>
+			<Add option="`sdl-config --libs`" />
+		</Linker>
+		<Unit filename="include/Content.h" />
+		<Unit filename="include/Entity.h" />
+		<Unit filename="include/Log.h">
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="include/MageGame.h" />
+		<Unit filename="include/Texture2D.h" />
+		<Unit filename="include/Window.h" />
+		<Unit filename="include/globals.h" />
+		<Unit filename="include/image.h" />
+		<Unit filename="src/Content.cpp" />
+		<Unit filename="src/Entity.cpp" />
+		<Unit filename="src/Log.cpp">
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="src/MageGame.cpp" />
+		<Unit filename="src/Texture2D.cpp" />
+		<Unit filename="src/Window.cpp" />
+		<Unit filename="src/globals.cpp" />
+		<Unit filename="src/image.cpp" />
+		<Unit filename="src/main.cpp" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

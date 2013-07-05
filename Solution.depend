@@ -1,0 +1,119 @@
+# depslib dependency file v1.0
+1372675513 source:/home/henri/Documents/Projects/MageEngine/main.cpp
+	"MageGame.h"
+	<SOIL/SOIL.h>
+
+1372178182 /home/henri/Documents/Projects/MageEngine/Application.h
+
+1372594184 /home/henri/Documents/Projects/MageEngine/Window.h
+	<string>
+
+1372677518 source:/home/henri/Documents/Projects/MageEngine/MageGame.cpp
+	"MageGame.h"
+
+1372679015 /home/henri/Documents/Projects/MageEngine/MageGame.h
+	"Window.h"
+	<SDL/SDL.h>
+	<GL/gl.h>
+	"Log.h"
+
+1372676461 source:/home/henri/Documents/Projects/MageEngine/Window.cpp
+	"Window.h"
+	"SDL/SDL.h"
+
+1372676182 /home/henri/Documents/Projects/MageEngine/Debug.h
+	<iostream>
+	<fstream>
+
+1372676182 source:/home/henri/Documents/Projects/MageEngine/Debug.cpp
+	"Debug.h"
+
+1372677691 source:/home/henri/Documents/Projects/MageEngine/Log.cpp
+	"Log.h"
+
+1372677691 /home/henri/Documents/Projects/MageEngine/Log.h
+	<iostream>
+	<fstream>
+
+1372773887 source:/home/henri/Documents/Projects/MageEngine/src/Log.cpp
+	"../include/Log.h"
+
+1372773851 /home/henri/Documents/Projects/MageEngine/include/Log.h
+	<iostream>
+	<fstream>
+
+1372944344 source:/home/henri/Documents/Projects/MageEngine/src/MageGame.cpp
+	"../include/MageGame.h"
+
+1372855483 /home/henri/Documents/Projects/MageEngine/include/MageGame.h
+	"Window.h"
+	<SDL/SDL.h>
+	<GL/glew.h>
+	<IL/il.h>
+	"Log.h"
+	"image.h"
+	"Content.h"
+
+1372687294 /home/henri/Documents/Projects/MageEngine/include/Window.h
+	<string>
+	"../include/globals.h"
+
+1372854747 source:/home/henri/Documents/Projects/MageEngine/src/main.cpp
+	"../include/MageGame.h"
+	"../include/globals.h"
+	"../include/Log.h"
+
+1372692767 source:/home/henri/Documents/Projects/MageEngine/src/Window.cpp
+	"../include/Window.h"
+	"SDL/SDL.h"
+
+1372940497 /home/henri/Documents/Projects/MageEngine/include/globals.h
+	<GL/glew.h>
+
+1372686818 source:/home/henri/Documents/Projects/MageEngine/src/Texture.cpp
+	"../include/Texture.h"
+
+1372688782 /home/henri/Documents/Projects/MageEngine/include/Texture.h
+	<GL/gl.h>
+	"globals.h"
+
+1372855397 source:/home/henri/Documents/Projects/MageEngine/src/Content.cpp
+	"../include/Content.h"
+	"../include/Texture2D.h"
+	<IL/il.h>
+	<IL/ilu.h>
+
+1372774366 /home/henri/Documents/Projects/MageEngine/include/Content.h
+	<GL/glew.h>
+	<string>
+	"Texture2D.h"
+
+1372957327 /home/henri/Documents/Projects/MageEngine/include/Texture2D.h
+	<GL/glew.h>
+	"globals.h"
+
+1372956906 source:/home/henri/Documents/Projects/MageEngine/src/Texture2D.cpp
+	"../include/Texture2D.h"
+	"../include/Log.h"
+	<GL/glew.h>
+	<IL/il.h>
+
+1372773500 source:/home/henri/Documents/Projects/MageEngine/src/Entity.cpp
+	"../include/Entity.h"
+
+1372772758 /home/henri/Documents/Projects/MageEngine/include/Entity.h
+	"Texture2D.h"
+	"globals.h"
+
+1372940798 source:/home/henri/Documents/Projects/MageEngine/src/globals.cpp
+	"../include/globals.h"
+
+1372944267 source:/home/henri/Documents/Projects/MageEngine/src/image.cpp
+	"../include/image.h"
+	"GL/glew.h"
+	<SDL/SDL.h>
+
+1372944206 /home/henri/Documents/Projects/MageEngine/include/image.h
+	"Texture2D.h"
+	"Entity.h"
+
