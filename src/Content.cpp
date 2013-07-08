@@ -1,7 +1,7 @@
 #include "../include/Content.h"
 #include "../include/Texture2D.h"
-#include <IL/il.h>
-#include <IL/ilu.h>
+#include <il.h>
+#include <ilu.h>
 
 namespace MageEngine
 {

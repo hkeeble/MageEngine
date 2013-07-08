@@ -4,7 +4,7 @@
 #include "Window.h"
 #include <SDL/SDL.h>
 #include <GL/glew.h>
-#include <IL/il.h>
+#include <il.h>
 
 #include "Log.h"
 #include "image.h"
