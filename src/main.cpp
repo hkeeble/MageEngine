@@ -4,6 +4,12 @@
 
 using namespace MageEngine;
 
+#if _WIN32
+#undef main
+#elif _WIN64
+#undef main
+#endif
+
 int main ( int argc, char** argv )
 {
     MageGame game(800, 600, "Test");
