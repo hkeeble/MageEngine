@@ -7,6 +7,7 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Linux-Dbg">
+				<Option platforms="Unix;" />
 				<Option output="Build/Linux-Dbg/Engine" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="Build/Linux-Dbg/" />
 				<Option object_output="Intermediate/Linux-Dbg/" />
@@ -18,10 +19,11 @@
 				</Compiler>
 				<Linker>
 					<Add option="-lGL -lGLU -lIL -lGLEW" />
-					<Add library="/usr/lib/x86_64-linux-gnu/libSDL-1.2.so.0.11.4" />
+					<Add library="\usr\lib\x86_64-linux-gnu\libSDL-1.2.so.0.11.4" />
 				</Linker>
 			</Target>
 			<Target title="Linux-Rls">
+				<Option platforms="Unix;" />
 				<Option output="Build/Linux-Rls/Engine" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="Build/Linux-Rls" />
 				<Option object_output="Intermediate/Linux-Rls/" />
@@ -33,7 +35,47 @@
 				<Linker>
 					<Add option="-s" />
 					<Add option="-lGL -lGLU -lIL -lGLEW" />
-					<Add library="/usr/lib/x86_64-linux-gnu/libSDL-1.2.so.0.11.4" />
+					<Add library="\usr\lib\x86_64-linux-gnu\libSDL-1.2.so.0.11.4" />
+				</Linker>
+			</Target>
+			<Target title="Windows-Dbg">
+				<Option platforms="Windows;" />
+				<Option output="Build/Windows-Dbg/Engine" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="Build/Windows-Dbg" />
+				<Option object_output="Intermediate/Windows-Dbg" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add directory="C:/glew-1.9.0/include" />
+					<Add directory="C:/SDL/SDL-1.2.15/include" />
+					<Add directory="C:/DevIL/include/IL" />
+				</Compiler>
+				<Linker>
+					<Add option="-lopengl32 -lDevIL -lSDL -lglu32" />
+					<Add option="-static-libgcc -static-libstdc++" />
+					<Add library="C:\glew-1.9.0\lib\MinGW\libglew32.dll.a" />
+					<Add directory="C:/DevIL/lib" />
+					<Add directory="C:/SDL/SDL-1.2.15/lib/x86" />
+				</Linker>
+			</Target>
+			<Target title="Windows-Rls">
+				<Option platforms="Windows;" />
+				<Option output="Build/Windows-Rls/Engine" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="Build/Windows-Rls" />
+				<Option object_output="Intermediate/Windows-Rls" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add directory="C:/glew-1.9.0/include" />
+					<Add directory="C:/SDL/SDL-1.2.15/include" />
+					<Add directory="C:/DevIL/include/IL" />
+				</Compiler>
+				<Linker>
+					<Add option="-lopengl32 -lDevIL -lSDL -lglu32" />
+					<Add option="-static-libgcc -static-libstdc++" />
+					<Add library="C:\glew-1.9.0\lib\MinGW\libglew32.dll.a" />
+					<Add directory="C:/DevIL/lib" />
+					<Add directory="C:/SDL/SDL-1.2.15/lib/x86" />
 				</Linker>
 			</Target>
 		</Build>
@@ -64,6 +106,7 @@
 		<Extensions>
 			<code_completion />
 			<debugger />
+			<envvars />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>
