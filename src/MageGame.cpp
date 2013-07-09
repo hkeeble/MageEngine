@@ -18,6 +18,9 @@ namespace MageEngine
 
         log("Initializing Window...\n");
         wnd = Window(wndWidth, wndHeight, wndCaption);
+
+        log("Initializing Input State...\n");
+        inputState = InputState();
     }
 
     MageGame::~MageGame()
@@ -36,12 +39,6 @@ namespace MageEngine
 
         while(running == true)
         {
-			while(SDL_PollEvent(&event))
-			{
-				if(event.type == SDL_QUIT)
-					Exit();
-			}
-
             Update();
             Render();
         }
@@ -65,6 +62,13 @@ namespace MageEngine
 
     void MageGame::Update()
     {
+        inputState.Update();
+
+        if(inputState.IsActionActive(ME_QUIT))
+            Exit();
+
+        if(inputState.IsActionActive(ME_MOVE_DOWN))
+            log("Down button pressed!\n");
     }
 
     void MageGame::Render()

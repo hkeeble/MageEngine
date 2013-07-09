@@ -9,6 +9,7 @@
 #include "Log.h"
 #include "image.h"
 #include "Content.h"
+#include "InputState.h"
 
 namespace MageEngine
 {
@@ -30,7 +31,7 @@ namespace MageEngine
 
             Image testImg;
 
-            SDL_Event event;
+            InputState inputState;
 
             void Initialize();
             void LoadContent();

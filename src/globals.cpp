@@ -2,6 +2,8 @@
 
 namespace MageEngine
 {
+
+ // -------- VERTEXPOS2D --------
     VertexPos2D::VertexPos2D()
     {
         x = 0.0f;
@@ -14,6 +16,7 @@ namespace MageEngine
         y = Y;
     }
 
+// -------- TEXCOORD --------
     TexCoord::TexCoord()
     {
         s = 0;
@@ -26,6 +29,7 @@ namespace MageEngine
         t = T;
     }
 
+// -------- VERTEX2D --------
     Vertex2D::Vertex2D()
     {
         position = VertexPos2D();
@@ -38,6 +42,7 @@ namespace MageEngine
         texCoord = TextureCoord;
     }
 
+// -------- VECTOR2 --------
     Vector2::Vector2()
     {
         x = 0;
@@ -83,6 +88,7 @@ namespace MageEngine
         return *this;
     }
 
+// -------- RECT --------
     Rect::Rect()
     {
         x = 0;

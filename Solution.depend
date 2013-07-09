@@ -42,10 +42,10 @@
 	<iostream>
 	<fstream>
 
-1372944344 source:/home/henri/Documents/Projects/MageEngine/src/MageGame.cpp
+1373376050 source:/home/henri/Documents/Projects/MageEngine/src/MageGame.cpp
 	"../include/MageGame.h"
 
-1373288059 /home/henri/Documents/Projects/MageEngine/include/MageGame.h
+1373375949 /home/henri/Documents/Projects/MageEngine/include/MageGame.h
 	"Window.h"
 	<SDL/SDL.h>
 	<GL/glew.h>
@@ -53,12 +53,13 @@
 	"Log.h"
 	"image.h"
 	"Content.h"
+	"InputState.h"
 
 1372687294 /home/henri/Documents/Projects/MageEngine/include/Window.h
 	<string>
 	"../include/globals.h"
 
-1372854747 source:/home/henri/Documents/Projects/MageEngine/src/main.cpp
+1373292418 source:/home/henri/Documents/Projects/MageEngine/src/main.cpp
 	"../include/MageGame.h"
 	"../include/globals.h"
 	"../include/Log.h"
@@ -105,7 +106,7 @@
 	"Texture2D.h"
 	"globals.h"
 
-1372940798 source:/home/henri/Documents/Projects/MageEngine/src/globals.cpp
+1373370209 source:/home/henri/Documents/Projects/MageEngine/src/globals.cpp
 	"../include/globals.h"
 
 1373287126 source:/home/henri/Documents/Projects/MageEngine/src/image.cpp
@@ -420,4 +421,10 @@
 	"../include/MageGame.h"
 	"../include/globals.h"
 	"../include/Log.h"
+
+1373378004 source:/home/henri/Documents/Projects/MageEngine/src/InputState.cpp
+	"../include/InputState.h"
+
+1373378068 /home/henri/Documents/Projects/MageEngine/include/InputState.h
+	"SDL/SDL.h"
 
