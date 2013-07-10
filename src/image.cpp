@@ -68,6 +68,9 @@ void Image::initVBO()
 
 void Image::render()
 {
+    glPushMatrix();
+    glTranslatef(position.x, position.y, 0);
+
     glBindTexture(GL_TEXTURE_2D, tex.TextureID());
 
     glEnableClientState(GL_VERTEX_ARRAY);
@@ -85,5 +88,6 @@ void Image::render()
 
     glDisableClientState(GL_VERTEX_ARRAY);
     glDisableClientState(GL_TEXTURE_COORD_ARRAY);
+    glPopMatrix();
 }
 }

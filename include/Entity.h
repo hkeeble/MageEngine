@@ -21,7 +21,7 @@ namespace MageEngine
 
             void setBoundingBox(Rect newBox);
 
-        private:
+        protected:
             Vector2 position;
             Rect boundingBox;
     };

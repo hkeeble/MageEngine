@@ -12,6 +12,9 @@ namespace MageEngine
             Texture2D();
             ~Texture2D();
 
+            //Texture2D(const Texture2D& param);
+            //Texture2D& operator=(const Texture2D& param);
+
             void loadTexture(GLuint* Pixels, GLuint width, GLuint height);
             void clearTexture();
 
@@ -22,7 +25,6 @@ namespace MageEngine
         private:
             GLuint imgID;
             GLuint* pixels;
-            int32 imgWidth, imgHeight;
             int32 texWidth, texHeight;
     };
 }

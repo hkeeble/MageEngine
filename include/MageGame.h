@@ -29,7 +29,9 @@ namespace MageEngine
             void GLInit();
             void ILInit();
 
+            // Test Instances
             Image testImg;
+            Image backgroundTest;
 
             InputState inputState;
 

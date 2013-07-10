@@ -21,9 +21,7 @@ namespace MageEngine
         {
             success = ilConvertImage(IL_RGBA, IL_UNSIGNED_BYTE);
             if(success == IL_TRUE)
-            {
                 tex.loadTexture((GLuint*)ilGetData(), (GLuint)ilGetInteger(IL_IMAGE_WIDTH), (GLuint)ilGetInteger(IL_IMAGE_HEIGHT));
-            }
         }
 
         ilClearImage();

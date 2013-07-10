@@ -57,7 +57,10 @@ namespace MageEngine
         log("Loading game content...\n");
 
         Texture2D img = loadPNG("test");
+        Texture2D backgroundImg = loadPNG("ground");
+
         testImg = Image(Vector2(0, 0), img);
+        backgroundTest = Image(Vector2(0, 0), backgroundImg);
     }
 
     void MageGame::Update()
@@ -68,7 +71,13 @@ namespace MageEngine
             Exit();
 
         if(inputState.IsActionActive(ME_MOVE_DOWN))
-            log("Down button pressed!\n");
+            testImg.Move(Vector2(0, 1));
+        if(inputState.IsActionActive(ME_MOVE_LEFT))
+            testImg.Move(Vector2(-1, 0));
+        if(inputState.IsActionActive(ME_MOVE_RIGHT))
+            testImg.Move(Vector2(1, 0));
+        if(inputState.IsActionActive(ME_MOVE_UP))
+            testImg.Move(Vector2(0, -1));
     }
 
     void MageGame::Render()
@@ -76,8 +85,8 @@ namespace MageEngine
         // Clear Screen
         glClear(GL_COLOR_BUFFER_BIT);
 
+        backgroundTest.render();
         testImg.render();
-
 
         // Swap Buffers
         SDL_GL_SwapBuffers();

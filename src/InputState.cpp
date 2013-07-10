@@ -44,38 +44,37 @@ namespace MageEngine
 
     void InputState::Update()
     {
-        while(SDL_PollEvent(&event) != SDL_NOEVENT)
-        {
-            Uint8 eType = event.type;
+            SDL_PollEvent(&event);
 
-            if(eType == SDL_QUIT)
+            if(event.type == SDL_QUIT)
                 actions.QUIT = true;
-
-            if(eType == SDL_KEYDOWN)
+            else
             {
                 SDLKey key = event.key.keysym.sym;
 
-                if(key == keys.MOVE_DOWN)
-                    actions.MOVE_DOWN = true;
-                else
-                    actions.MOVE_DOWN = false;
-
-                if(key == keys.MOVE_LEFT)
-                    actions.MOVE_LEFT = true;
-                else
-                    actions.MOVE_LEFT = false;
-
-                if(key == keys.MOVE_RIGHT)
-                    actions.MOVE_RIGHT = true;
-                else
-                    actions.MOVE_RIGHT = false;
-
-                if(key == keys.MOVE_UP)
-                    actions.MOVE_UP = true;
-                else
-                    actions.MOVE_UP = false;
+                if(event.type == SDL_KEYDOWN)
+                {
+                    if(key == keys.MOVE_DOWN)
+                        actions.MOVE_DOWN = true;
+                    if(key == keys.MOVE_LEFT)
+                        actions.MOVE_LEFT = true;
+                    if(key == keys.MOVE_RIGHT)
+                        actions.MOVE_RIGHT = true;
+                    if(key == keys.MOVE_UP)
+                        actions.MOVE_UP = true;
+                }
+                else if (event.type == SDL_KEYUP)
+                {
+                    if(key == keys.MOVE_DOWN)
+                        actions.MOVE_DOWN = false;
+                    if(key == keys.MOVE_LEFT)
+                        actions.MOVE_LEFT = false;
+                    if(key == keys.MOVE_RIGHT)
+                        actions.MOVE_RIGHT = false;
+                    if(key == keys.MOVE_UP)
+                        actions.MOVE_UP = false;
+                }
             }
-        }
     }
 
     bool InputState::IsActionActive(InputAction action)
