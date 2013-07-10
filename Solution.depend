@@ -118,7 +118,7 @@
 	"Texture2D.h"
 	"Entity.h"
 
-1373291377 source:c:\users\henri\documents\projects\mageengine\src\content.cpp
+1373461783 source:c:\users\henri\documents\projects\mageengine\src\content.cpp
 	"../include/Content.h"
 	"../include/Texture2D.h"
 	<il.h>
@@ -137,7 +137,7 @@
 	<OpenGL/glu.h>
 	<GL/glu.h>
 
-1373291377 c:\users\henri\documents\projects\mageengine\include\texture2d.h
+1373461783 c:\users\henri\documents\projects\mageengine\include\texture2d.h
 	<GL/glew.h>
 	"globals.h"
 
@@ -155,14 +155,14 @@
 1373291377 source:c:\users\henri\documents\projects\mageengine\src\entity.cpp
 	"../include/Entity.h"
 
-1373291377 c:\users\henri\documents\projects\mageengine\include\entity.h
+1373461783 c:\users\henri\documents\projects\mageengine\include\entity.h
 	"Texture2D.h"
 	"globals.h"
 
-1373291377 source:c:\users\henri\documents\projects\mageengine\src\globals.cpp
+1373461783 source:c:\users\henri\documents\projects\mageengine\src\globals.cpp
 	"../include/globals.h"
 
-1373291377 source:c:\users\henri\documents\projects\mageengine\src\image.cpp
+1373461783 source:c:\users\henri\documents\projects\mageengine\src\image.cpp
 	"../include/image.h"
 	"GL/glew.h"
 	<SDL/SDL.h>
@@ -391,10 +391,10 @@
 	<iostream>
 	<fstream>
 
-1373291377 source:c:\users\henri\documents\projects\mageengine\src\magegame.cpp
+1373462673 source:c:\users\henri\documents\projects\mageengine\src\magegame.cpp
 	"../include/MageGame.h"
 
-1373291377 c:\users\henri\documents\projects\mageengine\include\magegame.h
+1373462673 c:\users\henri\documents\projects\mageengine\include\magegame.h
 	"Window.h"
 	<SDL/SDL.h>
 	<GL/glew.h>
@@ -402,12 +402,13 @@
 	"Log.h"
 	"image.h"
 	"Content.h"
+	"InputState.h"
 
 1373291377 c:\users\henri\documents\projects\mageengine\include\window.h
 	<string>
 	"../include/globals.h"
 
-1373291377 source:c:\users\henri\documents\projects\mageengine\src\texture2d.cpp
+1373461783 source:c:\users\henri\documents\projects\mageengine\src\texture2d.cpp
 	"../include/Texture2D.h"
 	"../include/Log.h"
 	<GL/glew.h>
@@ -427,4 +428,16 @@
 
 1373457561 /home/henri/Documents/Projects/MageEngine/include/InputState.h
 	"SDL/SDL.h"
+
+1373461783 c:\users\henri\documents\projects\mageengine\include\inputstate.h
+	"SDL/SDL.h"
+
+1373461783 source:c:\users\henri\documents\projects\mageengine\src\inputstate.cpp
+	"../include/InputState.h"
+
+1373462692 source:c:\users\henri\documents\projects\mageengine\src\sdltimer.cpp
+	"../include/SDLTimer.h"
+	<SDL/SDL.h>
+
+1370614407 c:\users\henri\documents\projects\mageengine\include\sdltimer.h
 

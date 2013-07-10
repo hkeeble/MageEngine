@@ -33,6 +33,8 @@ namespace MageEngine
     typedef short int16;
     typedef int int32;
 
+    #define FPS 60
+
     // Define global structs
     struct VertexPos2D
     {
