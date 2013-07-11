@@ -4,90 +4,139 @@
 
 namespace MageEngine
 {
-Image::Image()
-{
+    Image::Image()
+    {
+        // Initialize Vertex and Index buffer
+        vBuffer = 0;
+        iBuffer = 0;
 
-}
+        int i;
+        for(i = 0; i < 4; i++)
+            verts[i] = Vertex2D(VertexPos2D(0, 0), TexCoord(0, 0));
+        for(i = 0; i < 4; i++)
+            indices[i] = 0;
+    }
 
-Image::~Image()
-{
-    freeVBO();
-}
+    Image::~Image()
+    {
+        freeVBO();
+    }
 
-void Image::freeVBO()
-{
+    Image::Image(const Image& param)
+    {
+        *(this) = cpy(param);
+    }
 
-}
+    Image& Image::operator=(const Image& param)
+    {
+        if(this == &param)
+            return *(this);
+        else
+            return cpy(param);
+    }
 
-Image::Image(Vector2 pos, Texture2D texture) : Entity(pos, Rect((int32)pos.x, (int32)pos.y, texture.width(), texture.height()))
-{
-    // Initialize Vertex and Index buffer
-    vBuffer = 0;
-    iBuffer = 0;
+    Image& Image::cpy(const Image& param)
+    {
+        tex = param.tex;
 
-    tex = texture;
+        int i;
+        for(i = 0; i < 4; i++)
+            verts[i] = param.verts[i];
+        for(i = 0; i < 4; i++)
+            indices[i] = param.indices[i];
 
-    initVBO();
-}
+        glGenBuffers(1, &iBuffer);
+        glGenBuffers(1, &vBuffer);
 
-void Image::initVBO()
-{
-    Vertex2D verts[4];
-    GLuint indices[4];
+        // Create VBO
+        glGenBuffers(1, &vBuffer);
+        glBindBuffer(GL_ARRAY_BUFFER, vBuffer);
+        glBufferData(GL_ARRAY_BUFFER, 4 * sizeof(Vertex2D), verts, GL_STATIC_DRAW);
 
-    // Assign vertices
-    verts[0] = Vertex2D(VertexPos2D(0, 0),
-                        TexCoord(1.0f, 0.0f));
-    verts[1] = Vertex2D(VertexPos2D((GLfloat)tex.width(), 0),
-                        TexCoord(0.0f, 0.0f));
-    verts[2] = Vertex2D(VertexPos2D((GLfloat)tex.width(), (GLfloat)tex.height()),
-                        TexCoord(0.0f, 1.0f));
-    verts[3] = Vertex2D(VertexPos2D(0, (GLfloat)tex.height()),
-                        TexCoord(1.0f, 1.0f));
+        // Create IBO
+        glGenBuffers(1, &iBuffer);
+        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, iBuffer);
+        glBufferData(GL_ELEMENT_ARRAY_BUFFER, 4 * sizeof(GLuint), indices, GL_STATIC_DRAW);
 
-    // Initialize indices
-    indices[0] = 0;
-    indices[1] = 1;
-    indices[2] = 2;
-    indices[3] = 3;
+        return *(this);
+    }
 
-    // Create VBO
-    glGenBuffers(1, &vBuffer);
-    glBindBuffer(GL_ARRAY_BUFFER, vBuffer);
-    glBufferData(GL_ARRAY_BUFFER, 4 * sizeof(Vertex2D), verts, GL_STATIC_DRAW);
+    void Image::freeVBO()
+    {
+        glDeleteBuffers(1, &vBuffer);
+        glDeleteBuffers(1, &iBuffer);
+    }
 
-    // Create IBO
-    glGenBuffers(1, &iBuffer);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, iBuffer);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, 4 * sizeof(GLuint), indices, GL_STATIC_DRAW);
+    Image::Image(Vector2 pos, Texture2D texture) : Entity(pos, IRect((int32)pos.x, (int32)pos.y, texture.width(), texture.height()))
+    {
+        // Initialize Vertex and Index buffer
+        vBuffer = 0;
+        iBuffer = 0;
 
-    // Unbind Buffers
-    glBindBuffer(GL_ARRAY_BUFFER, NULL);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, NULL);
-}
+        tex = texture;
 
-void Image::render()
-{
-    glPushMatrix();
-    glTranslatef(position.x, position.y, 0);
+        initVBO();
+    }
 
-    glBindTexture(GL_TEXTURE_2D, tex.TextureID());
+    void Image::initVBO()
+    {
+        // Assign vertices
+        verts[0] = Vertex2D(VertexPos2D(0, 0),
+                            TexCoord(1.0f, 0.0f));
+        verts[1] = Vertex2D(VertexPos2D((GLfloat)tex.width(), 0),
+                            TexCoord(0.0f, 0.0f));
+        verts[2] = Vertex2D(VertexPos2D((GLfloat)tex.width(), (GLfloat)tex.height()),
+                            TexCoord(0.0f, 1.0f));
+        verts[3] = Vertex2D(VertexPos2D(0, (GLfloat)tex.height()),
+                            TexCoord(1.0f, 1.0f));
 
-    glEnableClientState(GL_VERTEX_ARRAY);
-    glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+        // Initialize indices
+        indices[0] = 0;
+        indices[1] = 1;
+        indices[2] = 2;
+        indices[3] = 3;
 
-    // Bind buffers
-    glBindBuffer(GL_ARRAY_BUFFER, vBuffer);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, iBuffer);
+        // Create VBO
+        glGenBuffers(1, &vBuffer);
+        glBindBuffer(GL_ARRAY_BUFFER, vBuffer);
+        glBufferData(GL_ARRAY_BUFFER, 4 * sizeof(Vertex2D), verts, GL_STATIC_DRAW);
 
-    // Assign pointers
-    glTexCoordPointer(2, GL_FLOAT, sizeof(Vertex2D), (GLvoid*)offsetof(Vertex2D, texCoord));
-    glVertexPointer(2, GL_FLOAT, sizeof(Vertex2D), (GLvoid*)offsetof(Vertex2D, position));
+        // Create IBO
+        glGenBuffers(1, &iBuffer);
+        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, iBuffer);
+        glBufferData(GL_ELEMENT_ARRAY_BUFFER, 4 * sizeof(GLuint), indices, GL_STATIC_DRAW);
 
-    glDrawElements(GL_QUADS, 4, GL_UNSIGNED_INT, NULL);
+        // Unbind Buffers
+        glBindBuffer(GL_ARRAY_BUFFER, NULL);
+        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, NULL);
+    }
 
-    glDisableClientState(GL_VERTEX_ARRAY);
-    glDisableClientState(GL_TEXTURE_COORD_ARRAY);
-    glPopMatrix();
-}
+    void Image::render()
+    {
+        glPushMatrix();
+        glTranslatef(position.x, position.y, 0);
+
+        glBindTexture(GL_TEXTURE_2D, tex.TextureID());
+
+        glEnableClientState(GL_VERTEX_ARRAY);
+        glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+
+        // Bind buffers
+        glBindBuffer(GL_ARRAY_BUFFER, vBuffer);
+        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, iBuffer);
+
+        // Assign pointers
+        glTexCoordPointer(2, GL_FLOAT, sizeof(Vertex2D), (GLvoid*)offsetof(Vertex2D, texCoord));
+        glVertexPointer(2, GL_FLOAT, sizeof(Vertex2D), (GLvoid*)offsetof(Vertex2D, position));
+
+        glDrawElements(GL_QUADS, 4, GL_UNSIGNED_INT, NULL);
+
+        // Unbind Buffers
+        glBindBuffer(GL_ARRAY_BUFFER, NULL);
+        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, NULL);
+
+        glDisableClientState(GL_VERTEX_ARRAY);
+        glDisableClientState(GL_TEXTURE_COORD_ARRAY);
+        glPopMatrix();
+    }
 }

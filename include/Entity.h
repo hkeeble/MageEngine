@@ -10,20 +10,20 @@ namespace MageEngine
     {
         public:
             Entity();
-            Entity(Vector2 Position, Rect BoundingBox);
+            Entity(Vector2 Position, IRect BoundingBox);
             ~Entity();
 
             Vector2 Position() const;
-            Rect BoundingBox() const;
+            IRect BoundingBox() const;
 
             void setPos(Vector2 newPos);
             void Move(Vector2 offset);
 
-            void setBoundingBox(Rect newBox);
+            void setBoundingBox(IRect newBox);
 
         protected:
             Vector2 position;
-            Rect boundingBox;
+            IRect boundingBox;
     };
 }
 

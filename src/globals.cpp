@@ -42,6 +42,25 @@ namespace MageEngine
         texCoord = TextureCoord;
     }
 
+    Vertex2D::Vertex2D(const Vertex2D& param)
+    {
+        *(this) = cpy(param);
+    }
+
+    Vertex2D& Vertex2D::operator=(const Vertex2D& param)
+    {
+        if(this == &param)
+            return *(this);
+        else
+            return cpy(param);
+    }
+
+    Vertex2D& Vertex2D::cpy(const Vertex2D& param)
+    {
+        position = param.position;
+        texCoord = param.texCoord;
+    }
+
 // -------- VECTOR2 --------
     Vector2::Vector2()
     {
@@ -88,8 +107,8 @@ namespace MageEngine
         return *this;
     }
 
-// -------- RECT --------
-    Rect::Rect()
+// -------- IRECT --------
+    IRect::IRect()
     {
         x = 0;
         y = 0;
@@ -97,7 +116,7 @@ namespace MageEngine
         height = 0;
     }
 
-    Rect::Rect(int32 X, int32 Y, int32 Width, int32 Height)
+    IRect::IRect(int32 X, int32 Y, int32 Width, int32 Height)
     {
         x = X;
         y = Y;
@@ -105,13 +124,50 @@ namespace MageEngine
         height = Height;
     }
 
-    Rect::~Rect()
+    IRect::~IRect()
     {
 
     }
 
-    bool Rect::intersect(Rect rec)
+    bool IRect::intersect(IRect rec)
     {
-        // INTERSECTS LOGIC
+        return intersect(FRect((GLfloat)rec.x, (GLfloat)rec.y, (GLfloat)rec.width, (GLfloat)rec.height));
+    }
+
+    bool IRect::intersect(FRect rec)
+    {
+        // INTERSECT LOGIC
+    }
+
+// -------- FRECT --------
+    FRect::FRect()
+    {
+        x = 0.0f;
+        y = 0.0f;
+        width = 0.0f;
+        height = 0.0f;
+    }
+
+    FRect::FRect(GLfloat X, GLfloat Y, GLfloat Width, GLfloat Height)
+    {
+        x = X;
+        y = Y;
+        width = Width;
+        height = Height;
+    }
+
+    FRect::~FRect()
+    {
+
+    }
+
+    bool FRect::intersect(FRect rec)
+    {
+        // INTERSECT LOGIC
+    }
+
+    bool FRect::intersect(IRect rec)
+    {
+        return intersect(FRect((GLfloat)rec.x, (GLfloat)rec.y, (GLfloat)rec.width, (GLfloat)rec.height));
     }
 }

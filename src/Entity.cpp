@@ -4,7 +4,7 @@ namespace MageEngine
 {
     Entity::Entity()
     {
-        boundingBox = Rect();
+        boundingBox = IRect();
         position = Vector2();
     }
 
@@ -13,7 +13,7 @@ namespace MageEngine
 
     }
 
-    Entity::Entity(Vector2 Position, Rect BoundingBox)
+    Entity::Entity(Vector2 Position, IRect BoundingBox)
     {
         position = Position;
         boundingBox = BoundingBox;
@@ -29,7 +29,7 @@ namespace MageEngine
         return position;
     }
 
-    Rect Entity::BoundingBox() const
+    IRect Entity::BoundingBox() const
     {
         return boundingBox;
     }
@@ -39,7 +39,7 @@ namespace MageEngine
         position = newPos;
     }
 
-    void Entity::setBoundingBox(Rect newBox)
+    void Entity::setBoundingBox(IRect newBox)
     {
         boundingBox = newBox;
     }

@@ -41,6 +41,13 @@ namespace MageEngine
     {
         VertexPos2D();
         VertexPos2D(GLfloat X, GLfloat Y);
+
+        /*
+        VertexPos2D(const VertexPos2D& param);
+        VertexPos2D& operator=(const VertexPos2D& param);
+        VertexPos2D& cpy(const VertexPos2D& param);
+        */
+
         GLfloat x, y;
     };
 
@@ -48,6 +55,13 @@ namespace MageEngine
     {
         TexCoord();
         TexCoord(GLfloat S, GLfloat T);
+
+        /*
+        TexCoord(const TexCoord& param);
+        TexCoord& operator=(const TexCoord& param);
+        TexCoord& cpy(const TexCoord& param);
+        */
+
         GLfloat s, t;
     };
 
@@ -55,6 +69,11 @@ namespace MageEngine
     {
         Vertex2D();
         Vertex2D(VertexPos2D Position, TexCoord TextureCoord);
+
+        Vertex2D(const Vertex2D& param);
+        Vertex2D& operator=(const Vertex2D& param);
+        Vertex2D& cpy(const Vertex2D& param);
+
         VertexPos2D position;
         TexCoord texCoord;
     };
@@ -72,13 +91,27 @@ namespace MageEngine
         Vector2 operator-(Vector2 param) const;
     };
 
-    struct Rect
+    struct FRect;
+    struct IRect;
+
+    struct IRect
     {
-        Rect();
-        Rect(int32 X, int32 Y, int32 Width, int32 Height);
-        ~Rect();
+        IRect();
+        IRect(int32 X, int32 Y, int32 Width, int32 Height);
+        ~IRect();
         int32 x, y, width, height;
-        bool intersect(Rect rec);
+        bool intersect(IRect rec);
+        bool intersect(FRect rec);
+    };
+
+    struct FRect
+    {
+        FRect();
+        FRect(GLfloat X, GLfloat Y, GLfloat Width, GLfloat Height);
+        ~FRect();
+        GLfloat x, y, width, height;
+        bool intersect(FRect rec);
+        bool intersect(IRect rec);
     };
 }
 #endif

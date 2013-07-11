@@ -6,27 +6,29 @@
 
 namespace MageEngine
 {
-class Image : public Entity
-{
-public:
-    Image();
-    Image(Vector2 pos, Texture2D texture);
-    ~Image();
+    class Image : public Entity
+    {
+        public:
+            Image();
+            Image(Vector2 pos, Texture2D texture);
+            ~Image();
 
-    void render();
+            Image(const Image& param);
+            Image& operator=(const Image& param);
 
-private:
-    Texture2D tex;
+            void render();
 
-    Vertex2D verts[4];
+        private:
+            Image& cpy(const Image& param);
+            void initVBO();
+            void freeVBO();
 
-    void initVBO();
-    void freeVBO();
-
-    GLuint indices[4];
-    GLuint vBuffer;
-    GLuint iBuffer;
-};
+            Texture2D tex;
+            Vertex2D verts[4];
+            GLuint indices[4];
+            GLuint vBuffer;
+            GLuint iBuffer;
+    };
 }
 
 #endif

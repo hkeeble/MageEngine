@@ -42,7 +42,7 @@
 	<iostream>
 	<fstream>
 
-1373536787 source:/home/henri/Documents/Projects/MageEngine/src/MageGame.cpp
+1373542484 source:/home/henri/Documents/Projects/MageEngine/src/MageGame.cpp
 	"../include/MageGame.h"
 
 1373535925 /home/henri/Documents/Projects/MageEngine/include/MageGame.h
@@ -69,7 +69,7 @@
 	"../include/Window.h"
 	"SDL/SDL.h"
 
-1373535925 /home/henri/Documents/Projects/MageEngine/include/globals.h
+1373541719 /home/henri/Documents/Projects/MageEngine/include/globals.h
 	<GL/glew.h>
 
 1372686818 source:/home/henri/Documents/Projects/MageEngine/src/Texture.cpp
@@ -95,28 +95,28 @@
 	<GL/glew.h>
 	"globals.h"
 
-1373538043 source:/home/henri/Documents/Projects/MageEngine/src/Texture2D.cpp
+1373538518 source:/home/henri/Documents/Projects/MageEngine/src/Texture2D.cpp
 	"../include/Texture2D.h"
 	"../include/Log.h"
 	<GL/glew.h>
 	<il.h>
 
-1372773500 source:/home/henri/Documents/Projects/MageEngine/src/Entity.cpp
+1373539238 source:/home/henri/Documents/Projects/MageEngine/src/Entity.cpp
 	"../include/Entity.h"
 
-1373457706 /home/henri/Documents/Projects/MageEngine/include/Entity.h
+1373539216 /home/henri/Documents/Projects/MageEngine/include/Entity.h
 	"Texture2D.h"
 	"globals.h"
 
-1373370209 source:/home/henri/Documents/Projects/MageEngine/src/globals.cpp
+1373541779 source:/home/henri/Documents/Projects/MageEngine/src/globals.cpp
 	"../include/globals.h"
 
-1373457693 source:/home/henri/Documents/Projects/MageEngine/src/image.cpp
+1373543008 source:/home/henri/Documents/Projects/MageEngine/src/image.cpp
 	"../include/image.h"
 	"GL/glew.h"
 	<SDL/SDL.h>
 
-1373287126 /home/henri/Documents/Projects/MageEngine/include/image.h
+1373540337 /home/henri/Documents/Projects/MageEngine/include/image.h
 	"Texture2D.h"
 	"Entity.h"
 

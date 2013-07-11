@@ -59,7 +59,9 @@ namespace MageEngine
         Texture2D img = loadPNG("test");
         Texture2D backgroundImg = loadPNG("ground");
 
-        testImg = Image(Vector2(0, 0), img);
+        Image im(Vector2(0, 0), img);
+
+        testImg = im;
         backgroundTest = Image(Vector2(0, 0), backgroundImg);
     }
 
