@@ -97,8 +97,10 @@ namespace MageEngine
         // Clear Screen
         glClear(GL_COLOR_BUFFER_BIT);
 
-        backgroundTest.render();
-        testImg.render();
+        FRect* r = new FRect(0, 0, 300, 300);
+
+        backgroundTest.render(r);
+        testImg.render(NULL);
 
         // Swap Buffers
         SDL_GL_SwapBuffers();

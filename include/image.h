@@ -16,7 +16,7 @@ namespace MageEngine
             Image(const Image& param);
             Image& operator=(const Image& param);
 
-            void render();
+            void render(FRect* clip);
 
         private:
             Image& cpy(const Image& param);

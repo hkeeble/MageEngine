@@ -39,24 +39,7 @@ namespace MageEngine
     {
         tex = param.tex;
 
-        int i;
-        for(i = 0; i < 4; i++)
-            verts[i] = param.verts[i];
-        for(i = 0; i < 4; i++)
-            indices[i] = param.indices[i];
-
-        glGenBuffers(1, &iBuffer);
-        glGenBuffers(1, &vBuffer);
-
-        // Create VBO
-        glGenBuffers(1, &vBuffer);
-        glBindBuffer(GL_ARRAY_BUFFER, vBuffer);
-        glBufferData(GL_ARRAY_BUFFER, 4 * sizeof(Vertex2D), verts, GL_STATIC_DRAW);
-
-        // Create IBO
-        glGenBuffers(1, &iBuffer);
-        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, iBuffer);
-        glBufferData(GL_ELEMENT_ARRAY_BUFFER, 4 * sizeof(GLuint), indices, GL_STATIC_DRAW);
+        initVBO();
 
         return *(this);
     }
@@ -99,20 +82,43 @@ namespace MageEngine
         // Create VBO
         glGenBuffers(1, &vBuffer);
         glBindBuffer(GL_ARRAY_BUFFER, vBuffer);
-        glBufferData(GL_ARRAY_BUFFER, 4 * sizeof(Vertex2D), verts, GL_STATIC_DRAW);
+        glBufferData(GL_ARRAY_BUFFER, 4 * sizeof(Vertex2D), verts, GL_DYNAMIC_DRAW);
 
         // Create IBO
         glGenBuffers(1, &iBuffer);
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, iBuffer);
-        glBufferData(GL_ELEMENT_ARRAY_BUFFER, 4 * sizeof(GLuint), indices, GL_STATIC_DRAW);
+        glBufferData(GL_ELEMENT_ARRAY_BUFFER, 4 * sizeof(GLuint), indices, GL_DYNAMIC_DRAW);
 
         // Unbind Buffers
         glBindBuffer(GL_ARRAY_BUFFER, NULL);
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, NULL);
     }
 
-    void Image::render()
+    void Image::render(FRect* clip)
     {
+        if(clip != NULL)
+        {
+            glBindBuffer(GL_ARRAY_BUFFER, vBuffer);
+
+            verts[1].position = VertexPos2D(clip->width, 0);
+            verts[2].position = VertexPos2D(clip->width, clip->height);
+            verts[3].position = VertexPos2D(0, clip->height);
+
+            GLfloat texLeft = clip->x / tex.width();
+            GLfloat texRight = ( clip->x + clip->width ) / tex.width();
+            GLfloat texTop = clip->y / tex.height();
+            GLfloat texBottom = ( clip->y + clip->height ) / tex.height();
+
+            verts[0].texCoord = TexCoord(texLeft, texTop);
+            verts[1].texCoord = TexCoord(texRight, texTop);
+            verts[2].texCoord = TexCoord(texRight, texBottom);
+            verts[3].texCoord = TexCoord(texLeft, texBottom);
+
+            glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(Vertex2D) * 4, verts);
+        }
+        else
+            initVBO();
+
         glPushMatrix();
         glTranslatef(position.x, position.y, 0);
 
