@@ -65,6 +65,8 @@ namespace MageEngine
 
     void MageGame::Update()
     {
+        updateTimer.Start();
+
         inputState.Update();
 
         if(inputState.IsActionActive(ME_QUIT))
@@ -78,10 +80,18 @@ namespace MageEngine
             testImg.Move(Vector2(1, 0));
         if(inputState.IsActionActive(ME_MOVE_UP))
             testImg.Move(Vector2(0, -1));
+
+        if(updateTimer.GetTicks() < 1000 / FPS)
+            SDL_Delay((1000 / FPS) - updateTimer.GetTicks());
+
+        updateTimer.Stop();
+        updateTimer.Reset();
     }
 
     void MageGame::Render()
     {
+        frameTimer.Start();
+
         // Clear Screen
         glClear(GL_COLOR_BUFFER_BIT);
 
@@ -90,6 +100,12 @@ namespace MageEngine
 
         // Swap Buffers
         SDL_GL_SwapBuffers();
+
+        if(frameTimer.GetTicks() < 1000 / FPS)
+            SDL_Delay((1000 / FPS) - frameTimer.GetTicks());
+
+        frameTimer.Stop();
+        frameTimer.Reset();
     }
 
     void MageGame::UnloadContent()

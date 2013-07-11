@@ -45,7 +45,7 @@
 1373459591 source:/home/henri/Documents/Projects/MageEngine/src/MageGame.cpp
 	"../include/MageGame.h"
 
-1373459061 /home/henri/Documents/Projects/MageEngine/include/MageGame.h
+1373535925 /home/henri/Documents/Projects/MageEngine/include/MageGame.h
 	"Window.h"
 	<SDL/SDL.h>
 	<GL/glew.h>
@@ -54,6 +54,7 @@
 	"image.h"
 	"Content.h"
 	"InputState.h"
+	"SDLTimer.h"
 
 1372687294 /home/henri/Documents/Projects/MageEngine/include/Window.h
 	<string>
@@ -68,7 +69,7 @@
 	"../include/Window.h"
 	"SDL/SDL.h"
 
-1372940497 /home/henri/Documents/Projects/MageEngine/include/globals.h
+1373535925 /home/henri/Documents/Projects/MageEngine/include/globals.h
 	<GL/glew.h>
 
 1372686818 source:/home/henri/Documents/Projects/MageEngine/src/Texture.cpp
@@ -78,9 +79,10 @@
 	<GL/gl.h>
 	"globals.h"
 
-1373461378 source:/home/henri/Documents/Projects/MageEngine/src/Content.cpp
+1373535503 source:/home/henri/Documents/Projects/MageEngine/src/Content.cpp
 	"../include/Content.h"
 	"../include/Texture2D.h"
+	"../include/Log.h"
 	<il.h>
 	<ilu.h>
 
@@ -93,7 +95,7 @@
 	<GL/glew.h>
 	"globals.h"
 
-1373461056 source:/home/henri/Documents/Projects/MageEngine/src/Texture2D.cpp
+1373461390 source:/home/henri/Documents/Projects/MageEngine/src/Texture2D.cpp
 	"../include/Texture2D.h"
 	"../include/Log.h"
 	<GL/glew.h>
@@ -440,4 +442,10 @@
 	<SDL/SDL.h>
 
 1370614407 c:\users\henri\documents\projects\mageengine\include\sdltimer.h
+
+1373535184 source:/home/henri/Documents/Projects/MageEngine/src/SDLTimer.cpp
+	"../include/SDLTimer.h"
+	<SDL/SDL.h>
+
+1373535184 /home/henri/Documents/Projects/MageEngine/include/SDLTimer.h
 
