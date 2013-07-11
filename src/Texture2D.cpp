@@ -7,36 +7,46 @@ namespace MageEngine
 {
     Texture2D::Texture2D()
     {
-
+        pixels = NULL;
     }
 
     Texture2D::~Texture2D()
     {
         clearTexture();
     }
-/*
+
     Texture2D::Texture2D(const Texture2D& param)
     {
-        // Retrieve Texture data from param
-        glBindTexture(GL_TEXTURE_2D, param.imgID);
-        glGetTexImage(GL_TEXTURE_2D, 0, GL_RGBA, GL_UNSIGNED_BYTE, pixels);
-
-        // Assign texture data to new ID
-        glGenTextures(1, &imgID);
-        glBindTexture(GL_TEXTURE_2D, imgID);
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, param.width(), param.height(), 0, GL_RGBA, GL_UNSIGNED_BYTE, pixels);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-        glBindTexture(GL_TEXTURE_2D, NULL);
-
-        texWidth = param.width();
-        texHeight = param.height();
+        *this = cpy(param);
     }
-*/
-    //Texture2D& operator=(const Texture2D& param)
-    //{
 
-    //}
+    Texture2D& Texture2D::operator=(const Texture2D& param)
+    {
+        if(this == &param)
+            return *(this);
+        else
+            return cpy(param);
+    }
+
+    Texture2D& Texture2D::cpy(const Texture2D& param)
+    {
+            glBindTexture(GL_TEXTURE_2D, param.imgID);
+            pixels = new GLuint[param.width() * param.height()];
+            glGetTexImage(GL_TEXTURE_2D, 0, GL_RGBA, GL_UNSIGNED_BYTE, pixels);
+
+            glGenTextures(1, &imgID);
+            glBindTexture(GL_TEXTURE_2D, imgID);
+            glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, param.width(), param.height(), 0, GL_RGBA, GL_UNSIGNED_BYTE, pixels);
+
+            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+            glBindTexture(GL_TEXTURE_2D, NULL);
+
+            texWidth = param.width();
+            texHeight = param.height();
+
+            return *(this);
+    }
 
     void Texture2D::loadTexture(GLuint* Pixels, GLuint width, GLuint height)
     {
@@ -44,6 +54,11 @@ namespace MageEngine
 
         texWidth = width;
         texHeight = height;
+
+        // Deep copy pixels
+        pixels = new GLuint[texWidth * texHeight];
+        for(int i = 0; i < (texWidth*texHeight); i++)
+            pixels[i] = Pixels[i];
 
         glGenTextures(1, &imgID);
         glBindTexture(GL_TEXTURE_2D, imgID);
@@ -66,7 +81,10 @@ namespace MageEngine
 
     void Texture2D::clearTexture()
     {
+        glDeleteTextures(1, &imgID);
 
+        if(pixels != NULL)
+            delete [] pixels;
     }
 
     int32 Texture2D::width() const

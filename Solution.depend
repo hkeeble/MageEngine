@@ -42,7 +42,7 @@
 	<iostream>
 	<fstream>
 
-1373459591 source:/home/henri/Documents/Projects/MageEngine/src/MageGame.cpp
+1373536787 source:/home/henri/Documents/Projects/MageEngine/src/MageGame.cpp
 	"../include/MageGame.h"
 
 1373535925 /home/henri/Documents/Projects/MageEngine/include/MageGame.h
@@ -91,11 +91,11 @@
 	<string>
 	"Texture2D.h"
 
-1373461378 /home/henri/Documents/Projects/MageEngine/include/Texture2D.h
+1373538472 /home/henri/Documents/Projects/MageEngine/include/Texture2D.h
 	<GL/glew.h>
 	"globals.h"
 
-1373461390 source:/home/henri/Documents/Projects/MageEngine/src/Texture2D.cpp
+1373538043 source:/home/henri/Documents/Projects/MageEngine/src/Texture2D.cpp
 	"../include/Texture2D.h"
 	"../include/Log.h"
 	<GL/glew.h>
