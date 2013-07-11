@@ -88,6 +88,7 @@
 		</Linker>
 		<Unit filename="include/Content.h" />
 		<Unit filename="include/Entity.h" />
+		<Unit filename="include/GameState.h" />
 		<Unit filename="include/InputState.h" />
 		<Unit filename="include/Log.h" />
 		<Unit filename="include/MageGame.h" />
@@ -98,6 +99,7 @@
 		<Unit filename="include/image.h" />
 		<Unit filename="src/Content.cpp" />
 		<Unit filename="src/Entity.cpp" />
+		<Unit filename="src/GameState.cpp" />
 		<Unit filename="src/InputState.cpp" />
 		<Unit filename="src/Log.cpp" />
 		<Unit filename="src/MageGame.cpp" />
