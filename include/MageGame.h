@@ -11,6 +11,7 @@
 #include "Content.h"
 #include "InputState.h"
 #include "SDLTimer.h"
+#include "GameState.h"
 
 namespace MageEngine
 {
@@ -44,6 +45,9 @@ namespace MageEngine
 
             // Used to represent and update the current input state
             InputState inputState;
+
+            // Game State Collection
+            GameStateCollection gameStates;
 
             // Core game functions
             void Initialize();
