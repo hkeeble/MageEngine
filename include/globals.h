@@ -42,12 +42,6 @@ namespace MageEngine
         VertexPos2D();
         VertexPos2D(GLfloat X, GLfloat Y);
 
-        /*
-        VertexPos2D(const VertexPos2D& param);
-        VertexPos2D& operator=(const VertexPos2D& param);
-        VertexPos2D& cpy(const VertexPos2D& param);
-        */
-
         GLfloat x, y;
     };
 
@@ -55,12 +49,6 @@ namespace MageEngine
     {
         TexCoord();
         TexCoord(GLfloat S, GLfloat T);
-
-        /*
-        TexCoord(const TexCoord& param);
-        TexCoord& operator=(const TexCoord& param);
-        TexCoord& cpy(const TexCoord& param);
-        */
 
         GLfloat s, t;
     };
@@ -112,6 +100,15 @@ namespace MageEngine
         GLfloat x, y, width, height;
         bool intersect(FRect rec);
         bool intersect(IRect rec);
+    };
+
+    struct Color
+    {
+        Color();
+        Color(GLubyte R, GLubyte G, GLubyte B, GLubyte A);
+        ~Color();
+
+        GLubyte r, g, b, a;
     };
 }
 #endif

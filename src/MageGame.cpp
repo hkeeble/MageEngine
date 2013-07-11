@@ -195,6 +195,13 @@ namespace MageEngine
         // Enable Texturing
         glEnable(GL_TEXTURE_2D);
 
+        // Enable Blending
+        glEnable(GL_BLEND);
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+        // Disable Depth
+        glDisable(GL_DEPTH_TEST);
+
         // Set Clear Color
         glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 

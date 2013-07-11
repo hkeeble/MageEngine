@@ -170,4 +170,26 @@ namespace MageEngine
     {
         return intersect(FRect((GLfloat)rec.x, (GLfloat)rec.y, (GLfloat)rec.width, (GLfloat)rec.height));
     }
+
+    // -------- COLOR --------
+    Color::Color()
+    {
+        r = 0;
+        g = 0;
+        b = 0;
+        a = 0;
+    }
+
+    Color::Color(GLubyte R, GLubyte G, GLubyte B, GLubyte A)
+    {
+        r = R;
+        g = G;
+        b = B;
+        a = A;
+    }
+
+    Color::~Color()
+    {
+
+    }
 }
