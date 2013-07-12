@@ -42,7 +42,7 @@
 	<iostream>
 	<fstream>
 
-1373549464 source:/home/henri/Documents/Projects/MageEngine/src/MageGame.cpp
+1373630413 source:/home/henri/Documents/Projects/MageEngine/src/MageGame.cpp
 	"../include/MageGame.h"
 
 1373568449 /home/henri/Documents/Projects/MageEngine/include/MageGame.h
@@ -61,10 +61,10 @@
 	<string>
 	"../include/globals.h"
 
-1373292418 source:/home/henri/Documents/Projects/MageEngine/src/main.cpp
-	"../include/MageGame.h"
-	"../include/globals.h"
-	"../include/Log.h"
+1373631720 source:/home/henri/Documents/Projects/MageEngine/src/main.cpp
+	"engine/Application/MageGame.h"
+	"engine/globals.h"
+	"engine/Application/Log.h"
 
 1372692767 source:/home/henri/Documents/Projects/MageEngine/src/Window.cpp
 	"../include/Window.h"
@@ -113,7 +113,7 @@
 1373549936 source:/home/henri/Documents/Projects/MageEngine/src/globals.cpp
 	"../include/globals.h"
 
-1373547646 source:/home/henri/Documents/Projects/MageEngine/src/image.cpp
+1373568435 source:/home/henri/Documents/Projects/MageEngine/src/image.cpp
 	"../include/image.h"
 	"GL/glew.h"
 	<SDL/SDL.h>
@@ -461,6 +461,194 @@
 1373553453 c:\users\henri\documents\projects\mageengine\include\gamestate.h
 	<vector>
 
-1373568449 /home/henri/Documents/Projects/MageEngine/include/GameState.h
+1373630413 /home/henri/Documents/Projects/MageEngine/include/GameState.h
 	<vector>
+
+1373630413 source:/home/henri/Documents/Projects/MageEngine/src/GameState.cpp
+	"../include/GameState.h"
+
+1373631036 source:/home/henri/Documents/Projects/MageEngine/src/engine/Content.cpp
+	"engine/Content.h"
+	"engine/Texture2D.h"
+	"engine/Log.h"
+	"engine/globals.h"
+	<il.h>
+	<ilu.h>
+
+1373631036 source:/home/henri/Documents/Projects/MageEngine/src/engine/GameState.cpp
+	"engine/GameState.h"
+
+1373631181 source:/home/henri/Documents/Projects/MageEngine/src/engine/globals.cpp
+	"engine/globals.h"
+
+1373631181 source:/home/henri/Documents/Projects/MageEngine/src/engine/image.cpp
+	"engine/image.h"
+	"GL/glew.h"
+	<SDL/SDL.h>
+
+1373631181 source:/home/henri/Documents/Projects/MageEngine/src/engine/InputState.cpp
+	"engine/InputState.h"
+
+1373631181 source:/home/henri/Documents/Projects/MageEngine/src/engine/Log.cpp
+	"engine/Log.h"
+
+1373631181 source:/home/henri/Documents/Projects/MageEngine/src/engine/MageGame.cpp
+	"engine/MageGame.h"
+
+1373631181 source:/home/henri/Documents/Projects/MageEngine/src/engine/main.cpp
+	"engine/MageGame.h"
+	"engine/globals.h"
+	"engine/Log.h"
+
+1373631181 source:/home/henri/Documents/Projects/MageEngine/src/engine/SDLTimer.cpp
+	"engine/SDLTimer.h"
+	<SDL/SDL.h>
+
+1373631181 source:/home/henri/Documents/Projects/MageEngine/src/engine/Texture2D.cpp
+	"engine/Texture2D.h"
+	"engine/Log.h"
+	<GL/glew.h>
+	<il.h>
+
+1373631181 source:/home/henri/Documents/Projects/MageEngine/src/engine/Window.cpp
+	"engine/Window.h"
+	"SDL/SDL.h"
+
+1373631036 source:/home/henri/Documents/Projects/MageEngine/src/engine/Entity.cpp
+	"engine/Entity.h"
+
+1372774366 /home/henri/Documents/Projects/MageEngine/include/engine/Content.h
+	<GL/glew.h>
+	<string>
+	"Texture2D.h"
+
+1373538472 /home/henri/Documents/Projects/MageEngine/include/engine/Texture2D.h
+	<GL/glew.h>
+	"globals.h"
+
+1373548195 /home/henri/Documents/Projects/MageEngine/include/engine/globals.h
+	<GL/glew.h>
+
+1372773851 /home/henri/Documents/Projects/MageEngine/include/engine/Log.h
+	<iostream>
+	<fstream>
+
+1373539216 /home/henri/Documents/Projects/MageEngine/include/engine/Entity.h
+	"Texture2D.h"
+	"globals.h"
+
+1373630413 /home/henri/Documents/Projects/MageEngine/include/engine/GameState.h
+	<vector>
+
+1373546325 /home/henri/Documents/Projects/MageEngine/include/engine/image.h
+	"Texture2D.h"
+	"Entity.h"
+
+1373457561 /home/henri/Documents/Projects/MageEngine/include/engine/InputState.h
+	"SDL/SDL.h"
+
+1373568449 /home/henri/Documents/Projects/MageEngine/include/engine/MageGame.h
+	"Window.h"
+	<SDL/SDL.h>
+	<GL/glew.h>
+	<il.h>
+	"Log.h"
+	"image.h"
+	"Content.h"
+	"InputState.h"
+	"SDLTimer.h"
+	"GameState.h"
+
+1373631193 /home/henri/Documents/Projects/MageEngine/include/engine/Window.h
+	<string>
+	"globals.h"
+
+1373535184 /home/henri/Documents/Projects/MageEngine/include/engine/SDLTimer.h
+
+1373631511 source:/home/henri/Documents/Projects/MageEngine/src/engine/Application/Content.cpp
+	"engine/Application/Content.h"
+	"engine/Rendering/Texture2D.h"
+	"engine/Application/Log.h"
+	"engine/globals.h"
+	<il.h>
+	<ilu.h>
+
+1373631650 /home/henri/Documents/Projects/MageEngine/include/engine/Application/Content.h
+	<GL/glew.h>
+	<string>
+	"../Rendering/Texture2D.h"
+
+1373631656 /home/henri/Documents/Projects/MageEngine/include/engine/Rendering/Texture2D.h
+	<GL/glew.h>
+	"../globals.h"
+
+1372773851 /home/henri/Documents/Projects/MageEngine/include/engine/Application/Log.h
+	<iostream>
+	<fstream>
+
+1373631625 source:/home/henri/Documents/Projects/MageEngine/src/engine/Application/GameState.cpp
+	"engine/Application/GameState.h"
+
+1373630413 /home/henri/Documents/Projects/MageEngine/include/engine/Application/GameState.h
+	<vector>
+
+1373631625 source:/home/henri/Documents/Projects/MageEngine/src/engine/Application/Log.cpp
+	"engine/Application/Log.h"
+
+1373631625 source:/home/henri/Documents/Projects/MageEngine/src/engine/Application/MageGame.cpp
+	"engine/Application/MageGame.h"
+
+1373631682 /home/henri/Documents/Projects/MageEngine/include/engine/Application/MageGame.h
+	"Window.h"
+	<SDL/SDL.h>
+	<GL/glew.h>
+	<il.h>
+	"Log.h"
+	"../Rendering/image.h"
+	"Content.h"
+	"../Input/InputState.h"
+	"SDLTimer.h"
+	"GameState.h"
+
+1373631662 /home/henri/Documents/Projects/MageEngine/include/engine/Application/Window.h
+	<string>
+	"../globals.h"
+
+1373546325 /home/henri/Documents/Projects/MageEngine/include/engine/Rendering/image.h
+	"Texture2D.h"
+	"Entity.h"
+
+1373631688 /home/henri/Documents/Projects/MageEngine/include/engine/Rendering/Entity.h
+	"Texture2D.h"
+	"../globals.h"
+
+1373457561 /home/henri/Documents/Projects/MageEngine/include/engine/Input/InputState.h
+	"SDL/SDL.h"
+
+1373535184 /home/henri/Documents/Projects/MageEngine/include/engine/Application/SDLTimer.h
+
+1373631625 source:/home/henri/Documents/Projects/MageEngine/src/engine/Application/SDLTimer.cpp
+	"engine/Application/SDLTimer.h"
+	<SDL/SDL.h>
+
+1373631625 source:/home/henri/Documents/Projects/MageEngine/src/engine/Application/Window.cpp
+	"engine/Application/Window.h"
+	"SDL/SDL.h"
+
+1373631625 source:/home/henri/Documents/Projects/MageEngine/src/engine/Input/InputState.cpp
+	"engine/Input/InputState.h"
+
+1373631699 source:/home/henri/Documents/Projects/MageEngine/src/engine/Rendering/Entity.cpp
+	"engine/Rendering/Entity.h"
+
+1373631705 source:/home/henri/Documents/Projects/MageEngine/src/engine/Rendering/image.cpp
+	"engine/Rendering/image.h"
+	"GL/glew.h"
+	<SDL/SDL.h>
+
+1373631714 source:/home/henri/Documents/Projects/MageEngine/src/engine/Rendering/Texture2D.cpp
+	"engine/Rendering/Texture2D.h"
+	"engine/Application/Log.h"
+	<GL/glew.h>
+	<il.h>
 

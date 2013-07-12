@@ -1,6 +1,6 @@
-#include "../include/MageGame.h"
-#include "../include/globals.h"
-#include "../include/Log.h"
+#include "engine/Application/MageGame.h"
+#include "engine/globals.h"
+#include "engine/Application/Log.h"
 
 using namespace MageEngine;
 
