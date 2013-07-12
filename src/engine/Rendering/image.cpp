@@ -63,6 +63,14 @@ namespace MageEngine
 
     void Image::initVBO()
     {
+        if(vBuffer != 0)
+            glDeleteBuffers(1, &vBuffer);
+        if(iBuffer != 0)
+            glDeleteBuffers(1, &iBuffer);
+
+        vBuffer = 0;
+        iBuffer = 0;
+
         // Assign vertices
         verts[0] = Vertex2D(VertexPos2D(0, 0),
                             TexCoord(1.0f, 0.0f));
