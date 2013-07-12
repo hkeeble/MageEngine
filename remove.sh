@@ -1,1 +1,0 @@
-git rm src/Content.cpp src/GameState.cpp src/Log.cpp src/MageGame.cpp src/SDLTimer.cpp src/Window.cpp src/InputState.cpp src/globals.cpp src/Content.h src/GameState.h src/Log.h src/MageGame.h src/SDLTimer.h src/Window.h src/InputState.h src/globals.h
