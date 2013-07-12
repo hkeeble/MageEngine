@@ -16,10 +16,11 @@
 				<Option use_console_runner="0" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-lGL -lGLU -lIL -lGLEW" />
-					<Add library="\usr\lib\x86_64-linux-gnu\libSDL-1.2.so.0.11.4" />
+					<Add library="/usr/lib/x86_64-linux-gnu/libSDL-1.2.so.0.11.4" />
 				</Linker>
 			</Target>
 			<Target title="Linux-Rls">
@@ -35,7 +36,7 @@
 				<Linker>
 					<Add option="-s" />
 					<Add option="-lGL -lGLU -lIL -lGLEW" />
-					<Add library="\usr\lib\x86_64-linux-gnu\libSDL-1.2.so.0.11.4" />
+					<Add library="/usr/lib/x86_64-linux-gnu/libSDL-1.2.so.0.11.4" />
 				</Linker>
 			</Target>
 			<Target title="Windows-Dbg">
@@ -53,7 +54,7 @@
 				<Linker>
 					<Add option="-lopengl32 -lDevIL -lSDL -lglu32" />
 					<Add option="-static-libgcc -static-libstdc++" />
-					<Add library="C:\glew-1.9.0\lib\MinGW\libglew32.dll.a" />
+					<Add library="C:/glew-1.9.0/lib/MinGW/libglew32.dll.a" />
 					<Add directory="C:/DevIL/lib" />
 					<Add directory="C:/SDL/SDL-1.2.15/lib/x86" />
 				</Linker>
@@ -73,7 +74,7 @@
 				<Linker>
 					<Add option="-lopengl32 -lDevIL -lSDL -lglu32" />
 					<Add option="-static-libgcc -static-libstdc++" />
-					<Add library="C:\glew-1.9.0\lib\MinGW\libglew32.dll.a" />
+					<Add library="C:/glew-1.9.0/lib/MinGW/libglew32.dll.a" />
 					<Add directory="C:/DevIL/lib" />
 					<Add directory="C:/SDL/SDL-1.2.15/lib/x86" />
 				</Linker>
@@ -86,28 +87,29 @@
 		<Linker>
 			<Add option="`sdl-config --libs`" />
 		</Linker>
-		<Unit filename="include/Content.h" />
-		<Unit filename="include/Entity.h" />
-		<Unit filename="include/GameState.h" />
-		<Unit filename="include/InputState.h" />
-		<Unit filename="include/Log.h" />
-		<Unit filename="include/MageGame.h" />
-		<Unit filename="include/SDLTimer.h" />
-		<Unit filename="include/Texture2D.h" />
-		<Unit filename="include/Window.h" />
-		<Unit filename="include/globals.h" />
-		<Unit filename="include/image.h" />
-		<Unit filename="src/Content.cpp" />
-		<Unit filename="src/Entity.cpp" />
-		<Unit filename="src/GameState.cpp" />
-		<Unit filename="src/InputState.cpp" />
-		<Unit filename="src/Log.cpp" />
-		<Unit filename="src/MageGame.cpp" />
-		<Unit filename="src/SDLTimer.cpp" />
-		<Unit filename="src/Texture2D.cpp" />
-		<Unit filename="src/Window.cpp" />
-		<Unit filename="src/globals.cpp" />
-		<Unit filename="src/image.cpp" />
+		<Unit filename="include/engine/Application/Content.h" />
+		<Unit filename="include/engine/Application/GameState.h" />
+		<Unit filename="include/engine/Application/Log.h" />
+		<Unit filename="include/engine/Application/MageGame.h" />
+		<Unit filename="include/engine/Application/SDLTimer.h" />
+		<Unit filename="include/engine/Application/Window.h" />
+		<Unit filename="include/engine/Input/InputState.h" />
+		<Unit filename="include/engine/Rendering/Entity.h" />
+		<Unit filename="include/engine/Rendering/Texture2D.h" />
+		<Unit filename="include/engine/Rendering/image.h" />
+		<Unit filename="include/engine/globals.h" />
+		<Unit filename="src/InGame.cpp" />
+		<Unit filename="src/engine/Application/Content.cpp" />
+		<Unit filename="src/engine/Application/GameState.cpp" />
+		<Unit filename="src/engine/Application/Log.cpp" />
+		<Unit filename="src/engine/Application/MageGame.cpp" />
+		<Unit filename="src/engine/Application/SDLTimer.cpp" />
+		<Unit filename="src/engine/Application/Window.cpp" />
+		<Unit filename="src/engine/Input/InputState.cpp" />
+		<Unit filename="src/engine/Rendering/Entity.cpp" />
+		<Unit filename="src/engine/Rendering/Texture2D.cpp" />
+		<Unit filename="src/engine/Rendering/image.cpp" />
+		<Unit filename="src/engine/globals.cpp" />
 		<Unit filename="src/main.cpp" />
 		<Extensions>
 			<code_completion />

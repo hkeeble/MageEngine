@@ -1,119 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Linux-Dbg" />
-	<File name="include/Content.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src/InGame.cpp" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="179" topLine="0" />
+			<Cursor1 position="600" topLine="18" />
 		</Cursor>
 	</File>
-	<File name="src/GameState.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src/engine/Application/Content.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2261" topLine="88" />
-		</Cursor>
-	</File>
-	<File name="src/InputState.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="123" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include/InputState.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="518" topLine="25" />
-		</Cursor>
-	</File>
-	<File name="src/Texture2D.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="474" topLine="22" />
-		</Cursor>
-	</File>
-	<File name="include/MageGame.h" open="1" top="1" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="278" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include/globals.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2011" topLine="64" />
-		</Cursor>
-	</File>
-	<File name="include/Texture2D.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="590" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include/Log.h" open="0" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="150" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include/Entity.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="514" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src/SDLTimer.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="48" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include/Window.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="541" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src/MageGame.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1970" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include/SDLTimer.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include/GameState.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1161" topLine="24" />
-		</Cursor>
-	</File>
-	<File name="src/Log.cpp" open="0" top="0" tabpos="16" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="133" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include/image.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="427" topLine="2" />
-		</Cursor>
-	</File>
-	<File name="src/Content.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="365" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src/main.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="178" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src/Entity.cpp" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="675" topLine="15" />
-		</Cursor>
-	</File>
-	<File name="src/image.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="598" topLine="4" />
-		</Cursor>
-	</File>
-	<File name="src/Window.cpp" open="0" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="905" topLine="11" />
-		</Cursor>
-	</File>
-	<File name="src/globals.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2574" topLine="123" />
+			<Cursor1 position="348" topLine="0" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>
