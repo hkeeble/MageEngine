@@ -56,13 +56,11 @@ namespace MageEngine
     {
         log("Loading game content...\n");
 
-        Texture2D img = loadPNG("test");
-        Texture2D backgroundImg = loadPNG("ground");
+    }
 
-        Image im(Vector2(0, 0), img);
-
-        testImg = im;
-        backgroundTest = Image(Vector2(0, 0), backgroundImg);
+    void MageGame::AddState(GameState* state)
+    {
+        gameStates.AddState(state);
     }
 
     void MageGame::Update()
@@ -73,18 +71,13 @@ namespace MageEngine
         if(inputState.IsActionActive(ME_QUIT))
             Exit();
 
-        for(std::vector<GameState>::iterator iter = gameStates.States()->begin(); iter != gameStates.States()->begin(); ++iter)
-            if(iter->IsEnabled())
-                iter->Update();
+        for(std::vector<GameState*>::iterator iter = gameStates.States()->begin(); iter != gameStates.States()->end(); ++iter)
+        {
+            GameState* state = *iter;
 
-        if(inputState.IsActionActive(ME_MOVE_DOWN))
-            testImg.Move(Vector2(0, 1));
-        if(inputState.IsActionActive(ME_MOVE_LEFT))
-            testImg.Move(Vector2(-1, 0));
-        if(inputState.IsActionActive(ME_MOVE_RIGHT))
-            testImg.Move(Vector2(1, 0));
-        if(inputState.IsActionActive(ME_MOVE_UP))
-            testImg.Move(Vector2(0, -1));
+            if(state->IsEnabled())
+                state->Update(inputState);
+        }
 
         if(updateTimer.GetTicks() < 1000 / FPS)
             SDL_Delay((1000 / FPS) - updateTimer.GetTicks());
@@ -100,14 +93,13 @@ namespace MageEngine
         // Clear Screen
         glClear(GL_COLOR_BUFFER_BIT);
 
-        for(std::vector<GameState>::iterator iter = gameStates.States()->begin(); iter != gameStates.States()->begin(); ++iter)
-            if(iter->IsEnabled())
-                iter->Render();
+        for(std::vector<GameState*>::iterator iter = gameStates.States()->begin(); iter != gameStates.States()->end(); ++iter)
+        {
+            GameState* state = *iter;
 
-        FRect* r = new FRect(0, 0, 300, 300);
-
-        backgroundTest.render(r);
-        testImg.render(NULL);
+            if(state->IsEnabled())
+                state->Render();
+        }
 
         // Swap Buffers
         SDL_GL_SwapBuffers();

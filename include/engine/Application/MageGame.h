@@ -26,6 +26,9 @@ namespace MageEngine
             void Run();
 
             Window window();
+
+            void AddState(GameState* state);
+
         private:
             Window wnd;
             bool running;
@@ -38,10 +41,6 @@ namespace MageEngine
             // Timers used for regulating frame rate and update rate
             SDLTimer frameTimer;
             SDLTimer updateTimer;
-
-            // Test Instances
-            Image testImg;
-            Image backgroundTest;
 
             // Used to represent and update the current input state
             InputState inputState;

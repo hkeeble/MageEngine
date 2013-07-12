@@ -61,10 +61,11 @@
 	<string>
 	"../include/globals.h"
 
-1373631720 source:/home/henri/Documents/Projects/MageEngine/src/main.cpp
+1373636067 source:/home/henri/Documents/Projects/MageEngine/src/main.cpp
 	"engine/Application/MageGame.h"
 	"engine/globals.h"
 	"engine/Application/Log.h"
+	"InGame.h"
 
 1372692767 source:/home/henri/Documents/Projects/MageEngine/src/Window.cpp
 	"../include/Window.h"
@@ -586,19 +587,20 @@
 	<iostream>
 	<fstream>
 
-1373631625 source:/home/henri/Documents/Projects/MageEngine/src/engine/Application/GameState.cpp
+1373635726 source:/home/henri/Documents/Projects/MageEngine/src/engine/Application/GameState.cpp
 	"engine/Application/GameState.h"
 
-1373630413 /home/henri/Documents/Projects/MageEngine/include/engine/Application/GameState.h
+1373635399 /home/henri/Documents/Projects/MageEngine/include/engine/Application/GameState.h
 	<vector>
+	"../Input/InputState.h"
 
 1373631625 source:/home/henri/Documents/Projects/MageEngine/src/engine/Application/Log.cpp
 	"engine/Application/Log.h"
 
-1373631625 source:/home/henri/Documents/Projects/MageEngine/src/engine/Application/MageGame.cpp
+1373635889 source:/home/henri/Documents/Projects/MageEngine/src/engine/Application/MageGame.cpp
 	"engine/Application/MageGame.h"
 
-1373631682 /home/henri/Documents/Projects/MageEngine/include/engine/Application/MageGame.h
+1373635812 /home/henri/Documents/Projects/MageEngine/include/engine/Application/MageGame.h
 	"Window.h"
 	<SDL/SDL.h>
 	<GL/glew.h>
@@ -651,4 +653,12 @@
 	"engine/Application/Log.h"
 	<GL/glew.h>
 	<il.h>
+
+1373634620 source:/home/henri/Documents/Projects/MageEngine/src/InGame.cpp
+	"InGame.h"
+	"engine/Application/Content.h"
+
+1373634572 /home/henri/Documents/Projects/MageEngine/include/InGame.h
+	"engine/Application/GameState.h"
+	"engine/Rendering/image.h"
 

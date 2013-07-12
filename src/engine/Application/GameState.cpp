@@ -13,6 +13,9 @@ namespace MageEngine
     {
         enabled = false;
         id = stateID;
+
+        Initialize();
+        LoadContent();
     }
 
     GameState::~GameState()
@@ -58,7 +61,17 @@ namespace MageEngine
         return enabled;
     }
 
-    void GameState::Update()
+    void GameState::Initialize()
+    {
+
+    }
+
+    void GameState::LoadContent()
+    {
+
+    }
+
+    void GameState::Update(InputState& inputState)
     {
 
     }
@@ -71,7 +84,7 @@ namespace MageEngine
     // -------- GAME STATE COLLECTION --------
     GameStateCollection::GameStateCollection()
     {
-        states = std::vector<GameState>();
+        states = std::vector<GameState*>();
     }
 
     GameStateCollection::~GameStateCollection()
@@ -95,34 +108,35 @@ namespace MageEngine
         }
     }
 
-    void GameStateCollection::AddState(GameState newState)
+    void GameStateCollection::AddState(GameState* newState)
     {
         states.push_back(newState);
     }
 
     void GameStateCollection::RemoveState(GameStateID stateID)
     {
-        std::vector<GameState>::iterator iter = srch(stateID);
+        std::vector<GameState*>::iterator iter = srch(stateID);
         states.erase(iter);
     }
 
     void GameStateCollection::EnableState(GameStateID stateID)
     {
-        std::vector<GameState>::iterator iter = srch(stateID);
-        iter->Enable();
+        std::vector<GameState*>::iterator iter = srch(stateID);
+        GameState* state = *iter;
+        state->Enable();
     }
 
-    std::vector<GameState>* GameStateCollection::States()
+    std::vector<GameState*>* GameStateCollection::States()
     {
         return &states;
     }
 
-    std::vector<GameState>::iterator GameStateCollection::srch(GameStateID stateID)
+    std::vector<GameState*>::iterator GameStateCollection::srch(GameStateID stateID)
     {
-        for(std::vector<GameState>::iterator iter = states.begin(); iter != states.end(); ++iter)
+        for(std::vector<GameState*>::iterator iter = states.begin(); iter != states.end(); ++iter)
         {
-            GameState state = *iter;
-            if(state.ID() == stateID)
+            GameState* state = *iter;
+            if(state->ID() == stateID)
                 return iter;
         }
     }
