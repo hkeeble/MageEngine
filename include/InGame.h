@@ -11,11 +11,11 @@ class InGame: public GameState
     public:
         InGame();
         ~InGame();
-        void Update(InputState& inputState) override;
-        void Render() override;
+        virtual void Update(InputState& inputState);
+        virtual void Render();
     private:
-        void Initialize() override;
-        void LoadContent() override;
+        virtual void Initialize();
+        virtual void LoadContent();
 
         // Test Instances
         Image testImg;

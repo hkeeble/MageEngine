@@ -427,10 +427,11 @@
 	"../include/Window.h"
 	"SDL/SDL.h"
 
-1373292035 source:c:\users\henri\documents\projects\mageengine\src\main.cpp
-	"../include/MageGame.h"
-	"../include/globals.h"
-	"../include/Log.h"
+1374149166 source:c:\users\henri\documents\projects\mageengine\src\main.cpp
+	"engine/Application/MageGame.h"
+	"engine/globals.h"
+	"engine/Application/Log.h"
+	"InGame.h"
 
 1373458290 source:/home/henri/Documents/Projects/MageEngine/src/InputState.cpp
 	"../include/InputState.h"
@@ -662,7 +663,7 @@
 	"engine/Application/GameState.h"
 	"engine/Rendering/image.h"
 
-1373637816 source:c:\users\henri\documents\projects\mageengine\src\engine\application\content.cpp
+1374149166 source:c:\users\henri\documents\projects\mageengine\src\engine\application\content.cpp
 	"engine/Application/Content.h"
 	"engine/Rendering/Texture2D.h"
 	"engine/Application/Log.h"
@@ -670,39 +671,39 @@
 	<il.h>
 	<ilu.h>
 
-1373637816 c:\users\henri\documents\projects\mageengine\include\engine\application\content.h
+1374149166 c:\users\henri\documents\projects\mageengine\include\engine\application\content.h
 	<GL/glew.h>
 	<string>
 	"../Rendering/Texture2D.h"
 
-1373637816 c:\users\henri\documents\projects\mageengine\include\engine\rendering\texture2d.h
+1374149166 c:\users\henri\documents\projects\mageengine\include\engine\rendering\texture2d.h
 	<GL/glew.h>
 	"../globals.h"
 
-1373637816 c:\users\henri\documents\projects\mageengine\include\engine\globals.h
+1374149166 c:\users\henri\documents\projects\mageengine\include\engine\globals.h
 	<GL/glew.h>
 
-1373637816 c:\users\henri\documents\projects\mageengine\include\engine\application\log.h
+1374149166 c:\users\henri\documents\projects\mageengine\include\engine\application\log.h
 	<iostream>
 	<fstream>
 
-1373637816 source:c:\users\henri\documents\projects\mageengine\src\engine\application\gamestate.cpp
+1374149166 source:c:\users\henri\documents\projects\mageengine\src\engine\application\gamestate.cpp
 	"engine/Application/GameState.h"
 
-1373637816 c:\users\henri\documents\projects\mageengine\include\engine\application\gamestate.h
+1374149166 c:\users\henri\documents\projects\mageengine\include\engine\application\gamestate.h
 	<vector>
 	"../Input/InputState.h"
 
-1373637816 c:\users\henri\documents\projects\mageengine\include\engine\input\inputstate.h
+1374149166 c:\users\henri\documents\projects\mageengine\include\engine\input\inputstate.h
 	"SDL/SDL.h"
 
-1373637816 source:c:\users\henri\documents\projects\mageengine\src\engine\application\log.cpp
+1374149166 source:c:\users\henri\documents\projects\mageengine\src\engine\application\log.cpp
 	"engine/Application/Log.h"
 
-1373637816 source:c:\users\henri\documents\projects\mageengine\src\engine\application\magegame.cpp
+1374149166 source:c:\users\henri\documents\projects\mageengine\src\engine\application\magegame.cpp
 	"engine/Application/MageGame.h"
 
-1373637816 c:\users\henri\documents\projects\mageengine\include\engine\application\magegame.h
+1374149166 c:\users\henri\documents\projects\mageengine\include\engine\application\magegame.h
 	"Window.h"
 	<SDL/SDL.h>
 	<GL/glew.h>
@@ -714,45 +715,243 @@
 	"SDLTimer.h"
 	"GameState.h"
 
-1373637816 c:\users\henri\documents\projects\mageengine\include\engine\application\window.h
+1374149166 c:\users\henri\documents\projects\mageengine\include\engine\application\window.h
 	<string>
 	"../globals.h"
 
-1373637816 c:\users\henri\documents\projects\mageengine\include\engine\rendering\image.h
+1374149166 c:\users\henri\documents\projects\mageengine\include\engine\rendering\image.h
 	"Texture2D.h"
 	"Entity.h"
 
-1373637816 c:\users\henri\documents\projects\mageengine\include\engine\rendering\entity.h
+1374149166 c:\users\henri\documents\projects\mageengine\include\engine\rendering\entity.h
 	"Texture2D.h"
 	"../globals.h"
 
-1373637816 c:\users\henri\documents\projects\mageengine\include\engine\application\sdltimer.h
+1374149166 c:\users\henri\documents\projects\mageengine\include\engine\application\sdltimer.h
 
-1373637816 source:c:\users\henri\documents\projects\mageengine\src\engine\application\sdltimer.cpp
+1374149166 source:c:\users\henri\documents\projects\mageengine\src\engine\application\sdltimer.cpp
 	"engine/Application/SDLTimer.h"
 	<SDL/SDL.h>
 
-1373637816 source:c:\users\henri\documents\projects\mageengine\src\engine\application\window.cpp
+1374149166 source:c:\users\henri\documents\projects\mageengine\src\engine\application\window.cpp
 	"engine/Application/Window.h"
 	"SDL/SDL.h"
 
-1373637816 source:c:\users\henri\documents\projects\mageengine\src\engine\globals.cpp
+1374149166 source:c:\users\henri\documents\projects\mageengine\src\engine\globals.cpp
 	"engine/globals.h"
 
-1373637816 source:c:\users\henri\documents\projects\mageengine\src\engine\input\inputstate.cpp
+1374149166 source:c:\users\henri\documents\projects\mageengine\src\engine\input\inputstate.cpp
 	"engine/Input/InputState.h"
 
-1373637816 source:c:\users\henri\documents\projects\mageengine\src\engine\rendering\entity.cpp
+1374149166 source:c:\users\henri\documents\projects\mageengine\src\engine\rendering\entity.cpp
 	"engine/Rendering/Entity.h"
 
-1373637816 source:c:\users\henri\documents\projects\mageengine\src\engine\rendering\image.cpp
+1374149166 source:c:\users\henri\documents\projects\mageengine\src\engine\rendering\image.cpp
 	"engine/Rendering/image.h"
 	"GL/glew.h"
 	<SDL/SDL.h>
 
-1373637816 source:c:\users\henri\documents\projects\mageengine\src\engine\rendering\texture2d.cpp
+1374149166 source:c:\users\henri\documents\projects\mageengine\src\engine\rendering\texture2d.cpp
 	"engine/Rendering/Texture2D.h"
 	"engine/Application/Log.h"
 	<GL/glew.h>
 	<il.h>
+
+1325742240 c:\sdl-mingw\include\sdl\sdl.h
+	"SDL_main.h"
+	"SDL_stdinc.h"
+	"SDL_audio.h"
+	"SDL_cdrom.h"
+	"SDL_cpuinfo.h"
+	"SDL_endian.h"
+	"SDL_error.h"
+	"SDL_events.h"
+	"SDL_loadso.h"
+	"SDL_mutex.h"
+	"SDL_rwops.h"
+	"SDL_thread.h"
+	"SDL_timer.h"
+	"SDL_video.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325742240 c:\sdl-mingw\include\sdl\sdl_main.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325742240 c:\sdl-mingw\include\sdl\sdl_stdinc.h
+	"SDL_config.h"
+	<sys/types.h>
+	<stdio.h>
+	<stdlib.h>
+	<stddef.h>
+	<stdarg.h>
+	<stdlib.h>
+	<malloc.h>
+	<stddef.h>
+	<stdarg.h>
+	<memory.h>
+	<string.h>
+	<strings.h>
+	<inttypes.h>
+	<stdint.h>
+	<ctype.h>
+	<iconv.h>
+	"begin_code.h"
+	<alloca.h>
+	<malloc.h>
+	<malloc.h>
+	<malloc.h>
+	<stdlib.h>
+	"close_code.h"
+
+1326114588 c:\sdl-mingw\include\sdl\sdl_config.h
+	"SDL_platform.h"
+	"SDL_config_dreamcast.h"
+	"SDL_config_macos.h"
+	"SDL_config_macosx.h"
+	"SDL_config_symbian.h"
+	"SDL_config_win32.h"
+	"SDL_config_os2.h"
+	"SDL_config_minimal.h"
+
+1325742240 c:\sdl-mingw\include\sdl\sdl_platform.h
+
+1326114594 c:\sdl-mingw\include\sdl\sdl_config_win32.h
+	"SDL_platform.h"
+
+1326114600 c:\sdl-mingw\include\sdl\begin_code.h
+
+1325742240 c:\sdl-mingw\include\sdl\close_code.h
+
+1325742240 c:\sdl-mingw\include\sdl\sdl_audio.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_endian.h"
+	"SDL_mutex.h"
+	"SDL_thread.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325742240 c:\sdl-mingw\include\sdl\sdl_error.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325742240 c:\sdl-mingw\include\sdl\sdl_endian.h
+	"SDL_stdinc.h"
+	<endian.h>
+	"begin_code.h"
+	"close_code.h"
+
+1325742240 c:\sdl-mingw\include\sdl\sdl_mutex.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325742240 c:\sdl-mingw\include\sdl\sdl_thread.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_mutex.h"
+	"begin_code.h"
+	<process.h>
+	"close_code.h"
+
+1325742240 c:\sdl-mingw\include\sdl\sdl_rwops.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325742240 c:\sdl-mingw\include\sdl\sdl_cdrom.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325742240 c:\sdl-mingw\include\sdl\sdl_cpuinfo.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325742240 c:\sdl-mingw\include\sdl\sdl_events.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_active.h"
+	"SDL_keyboard.h"
+	"SDL_mouse.h"
+	"SDL_joystick.h"
+	"SDL_quit.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325742240 c:\sdl-mingw\include\sdl\sdl_active.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325742240 c:\sdl-mingw\include\sdl\sdl_keyboard.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_keysym.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325742240 c:\sdl-mingw\include\sdl\sdl_keysym.h
+
+1325742240 c:\sdl-mingw\include\sdl\sdl_mouse.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325742240 c:\sdl-mingw\include\sdl\sdl_video.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325742240 c:\sdl-mingw\include\sdl\sdl_joystick.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325742240 c:\sdl-mingw\include\sdl\sdl_quit.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+
+1325742240 c:\sdl-mingw\include\sdl\sdl_loadso.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325742240 c:\sdl-mingw\include\sdl\sdl_timer.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325742240 c:\sdl-mingw\include\sdl\sdl_version.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1374149166 source:c:\users\henri\documents\projects\mageengine\src\ingame.cpp
+	"InGame.h"
+	"engine/Application/Content.h"
+
+1374149423 c:\users\henri\documents\projects\mageengine\include\ingame.h
+	"engine/Application/GameState.h"
+	"engine/Rendering/image.h"
 
