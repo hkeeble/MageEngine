@@ -2,8 +2,8 @@
 #include "engine/Rendering/Texture2D.h"
 #include "engine/Application/Log.h"
 #include "engine/globals.h"
-#include <IL/il.h>
-#include <IL/ilu.h>
+#include <il.h>
+#include <ilu.h>
 
 namespace MageEngine
 {
