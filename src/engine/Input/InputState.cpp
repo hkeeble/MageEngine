@@ -44,6 +44,10 @@ namespace MageEngine
 
     void InputState::Update()
     {
+        keyboardState = SDL_GetKeyboardState(NULL);
+
+
+
             SDL_PollEvent(&event);
 
             if(event.type == SDL_QUIT)

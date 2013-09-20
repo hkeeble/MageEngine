@@ -47,17 +47,17 @@
 				<Option type="0" />
 				<Option compiler="gcc" />
 				<Compiler>
-					<Add directory="C:/glew-1.9.0/include" />
-					<Add directory="C:/SDL/SDL-1.2.15/include" />
-					<Add directory="C:/DevIL/include/IL" />
+					<Add directory="C:/glew-1.10.0/include" />
+					<Add directory="C:/SDL2-2.0.0/x86_64-w64-mingw32/include/" />
+					<Add directory="C:/DevIL/include" />
 					<Add directory="include" />
 				</Compiler>
 				<Linker>
-					<Add option="-lopengl32 -lDevIL -lSDL -lglu32" />
+					<Add option="-lopengl32 -lDevIL -lSDL2 -lglu32" />
 					<Add option="-static-libgcc -static-libstdc++" />
-					<Add library="C:\glew-1.9.0\lib\MinGW\libglew32.dll.a" />
+					<Add library="C:\glew-1.10.0\MinGW\libglew32.a" />
 					<Add directory="C:/DevIL/lib" />
-					<Add directory="C:/SDL/SDL-1.2.15/lib/x86" />
+					<Add directory="C:/SDL2-2.0.0/x86_64-w64-mingw32/lib" />
 				</Linker>
 			</Target>
 			<Target title="Windows-Rls">
@@ -68,15 +68,15 @@
 				<Option type="0" />
 				<Option compiler="gcc" />
 				<Compiler>
-					<Add directory="C:/glew-1.9.0/include" />
-					<Add directory="C:/SDL/SDL-1.2.15/include" />
-					<Add directory="C:/DevIL/include/IL" />
+					<Add directory="C:/glew-1.10.0/include" />
+					<Add directory="C:/SDL2-2.0.0/x86_64-w64-mingw32/include/" />
+					<Add directory="C:/DevIL/include" />
 					<Add directory="include" />
 				</Compiler>
 				<Linker>
-					<Add option="-lopengl32 -lDevIL -lSDL -lglu32" />
+					<Add option="-lopengl32 -lDevIL -lSDL2 -lglu32" />
 					<Add option="-static-libgcc -static-libstdc++" />
-					<Add library="C:\glew-1.9.0\lib\MinGW\libglew32.dll.a" />
+					<Add library="C:\glew-1.10.0\MinGW\libglew32.a" />
 					<Add directory="C:/DevIL/lib" />
 					<Add directory="C:/SDL/SDL-1.2.15/lib/x86" />
 				</Linker>

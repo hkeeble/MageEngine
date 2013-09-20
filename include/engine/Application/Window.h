@@ -2,6 +2,7 @@
 #define WINDOW_H
 
 #include <string>
+#include <SDL2/SDL.h>
 #include "../globals.h"
 
 namespace MageEngine
@@ -10,7 +11,7 @@ namespace MageEngine
     {
         public:
             Window(void);
-            Window(int32 Width, int32 Height, std::string caption);
+            Window(int32 Width, int32 Height, std::string caption, bool GL);
             ~Window(void);
 
             void SetCaption(std::string caption);
@@ -18,10 +19,15 @@ namespace MageEngine
 
             int32 Width(void);
             int32 Height(void);
+
+            SDL_Window* window;
+            SDL_GLContext glContext;
+
         private:
+            bool glEnabled;
+
             int32 width, height;
             std::string wndCaption;
-
     };
 }
 

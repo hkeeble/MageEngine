@@ -1,7 +1,7 @@
 #ifndef INPUTSTATE_H
 #define INPUTSTATE_H
 
-#include "SDL/SDL.h"
+#include "SDL2/SDL.h"
 
 namespace MageEngine
 {
@@ -24,10 +24,11 @@ namespace MageEngine
         bool MOVE_LEFT;
         bool MOVE_RIGHT;
     };
-
     struct Keys
     {
         void Default();
+
+        SDL_Scancode MOVE_UP;
 
         SDLKey MOVE_UP;
         SDLKey MOVE_DOWN;
@@ -51,6 +52,8 @@ namespace MageEngine
 
         private:
             SDL_Event event;
+
+            const Uint8* keyboardState;
 
             Actions actions;
             Keys keys;

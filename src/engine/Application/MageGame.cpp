@@ -17,7 +17,7 @@ namespace MageEngine
         running = false;
 
         log("Initializing Window...\n");
-        wnd = Window(wndWidth, wndHeight, wndCaption);
+        wnd = Window(wndWidth, wndHeight, wndCaption, true);
 
         log("Initializing Input State...\n");
         inputState = InputState();
@@ -102,7 +102,7 @@ namespace MageEngine
         }
 
         // Swap Buffers
-        SDL_GL_SwapBuffers();
+        SDL_GL_SwapWindow(wnd.window);
 
         if(frameTimer.GetTicks() < 1000 / FPS)
             SDL_Delay((1000 / FPS) - frameTimer.GetTicks());
@@ -124,43 +124,14 @@ namespace MageEngine
 
     bool MageGame::SDLInit()
     {
-        if(SDL_Init(SDL_INIT_AUDIO) == -1)
+        if(SDL_Init(SDL_INIT_EVERYTHING) == -1)
         {
-            printf("Failed to initialize SDL_AUDIO. Check error log for more information.");
-            log("FAILED TO INITIALIZE SDL_AUDIO: ");
+            printf("Failed to initialize SDL. Check error log for more information.");
+            log("FAILED TO INITIALIZE SDL: ");
             log(SDL_GetError());
             log("\n");
             return false;
         }
-
-        if(SDL_Init(SDL_INIT_EVENTTHREAD) == -1)
-        {
-            printf("Failed to initialize SDL_EVENTTHREAD. Check error log for more information.");
-            log("FAILED TO INITIALIZE SDL_EVENTTHREAD: ");
-            log(SDL_GetError());
-            log("\n");
-            return false;
-        }
-
-        if(SDL_Init(SDL_INIT_TIMER) == -1)
-        {
-            printf("Failed to initialize SDL_TIMER. Check error log for more information.");
-            log("FAILED TO INITIALIZE SDL_TIMER: ");
-            log(SDL_GetError());
-            log("\n");
-            return false;
-        }
-
-        if(SDL_Init(SDL_OPENGL) == -1)
-        {
-            printf("Failed to initialize SDL_OPENGL. Check error log for more information.");
-            log("FAILED TO INITIALIZE SDL_OPENGL: ");
-            log(SDL_GetError());
-            log("\n");
-            return false;
-        }
-
-        SDL_SetVideoMode(wnd.Width(), wnd.Height(), 32, SDL_OPENGL);
 
         return true;
     }

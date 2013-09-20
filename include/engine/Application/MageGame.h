@@ -2,9 +2,9 @@
 #define MAGE_GAME_H
 
 #include "Window.h"
-#include <SDL/SDL.h>
+#include <SDL2/SDL.h>
 #include <GL/glew.h>
-#include <il.h>
+#include <IL/il.h>
 
 #include "Log.h"
 #include "../Rendering/image.h"
@@ -24,8 +24,6 @@ namespace MageEngine
 
             // Enters the main game loop
             void Run();
-
-            Window window();
 
             void AddState(GameState* state);
 

@@ -1,5 +1,5 @@
 #include "engine/Application/SDLTimer.h"
-#include <SDL/SDL.h>
+#include <SDL2/SDL.h>
 
 namespace MageEngine
 {
