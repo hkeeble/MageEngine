@@ -1,3 +1,10 @@
+/*
+/-------------------------------------------------------------------------------\
+|                                   INPUTSTATE.CPP                              |
+| Declaration of a general purpose SDL Input Handler by Henri Keeble.           |
+\-------------------------------------------------------------------------------/
+*/
+
 #ifndef INPUTSTATE_H
 #define INPUTSTATE_H
 
@@ -5,58 +12,40 @@
 
 namespace MageEngine
 {
-    enum InputAction
-    {
-        ME_QUIT,
-        ME_MOVE_UP,
-        ME_MOVE_DOWN,
-        ME_MOVE_LEFT,
-        ME_MOVE_RIGHT
-    };
-
-    struct Actions
-    {
-        void Clear();
-
-        bool QUIT;
-        bool MOVE_UP;
-        bool MOVE_DOWN;
-        bool MOVE_LEFT;
-        bool MOVE_RIGHT;
-    };
-    struct Keys
-    {
-        void Default();
-
-        SDL_Scancode MOVE_UP;
-
-        SDLKey MOVE_UP;
-        SDLKey MOVE_DOWN;
-        SDLKey MOVE_LEFT;
-        SDLKey MOVE_RIGHT;
-    };
-
     class InputState
     {
         public:
             InputState();
             ~InputState();
 
-            void Initialize();
-            void AssignKeyToAction(SDLKey key, InputAction action);
-
             void Update();
-            void Clear();
 
-            bool IsActionActive(InputAction action);
+            bool IsKeyPressed(SDL_Scancode scancode);
+            bool IsKeyDown(SDL_Scancode scancode);
+            bool IsKeyReleased(SDL_Scancode scancode);
+            bool IsKeyUp(SDL_Scancode scancode);
+
+            bool IsButtonDown(Uint32 button);
+            bool IsButtonPressed(Uint32 button);
+            bool IsButtonReleased(Uint32 button);
+
+            bool HasQuit() const;
+
+            int MouseX() const;
+            int MouseY() const;
 
         private:
             SDL_Event event;
 
+            const Uint8* prevKeyboardState;
             const Uint8* keyboardState;
 
-            Actions actions;
-            Keys keys;
+            Uint32 prevMouseState;
+            Uint32 mouseState;
+
+            int mouseX, mouseY;
+
+            bool quit;
     };
 }
 #endif

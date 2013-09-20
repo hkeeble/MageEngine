@@ -14,14 +14,7 @@ InGame::~InGame()
 
 void InGame::Update(InputState& inputState)
 {
-    if(inputState.IsActionActive(ME_MOVE_DOWN))
-        testImg.Move(Vector2(0, 1));
-    if(inputState.IsActionActive(ME_MOVE_LEFT))
-        testImg.Move(Vector2(-1, 0));
-    if(inputState.IsActionActive(ME_MOVE_RIGHT))
-        testImg.Move(Vector2(1, 0));
-    if(inputState.IsActionActive(ME_MOVE_UP))
-        testImg.Move(Vector2(0, -1));
+
 }
 
 void InGame::Render()

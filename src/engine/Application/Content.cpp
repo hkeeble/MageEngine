@@ -30,7 +30,7 @@ namespace MageEngine
             GLuint Size = (GLuint)ilGetInteger(IL_IMAGE_WIDTH)*(GLuint)ilGetInteger(IL_IMAGE_HEIGHT);
             GLuint* pixels = new GLuint[Size];
             pixels = (GLuint*)ilGetData();
-            for(int i = 0; i < Size; i++)
+            for(unsigned int i = 0; i < Size; i++)
             {
                 GLubyte* colors = (GLubyte*)&pixels[i];
 

@@ -151,12 +151,12 @@
 1373550509 c:\users\henri\documents\projects\mageengine\include\globals.h
 	<GL/glew.h>
 
-1379424155 c:\devil\include\il\il.h
+1379690969 c:\devil\include\il\il.h
 	<stdio.h>
 	<limits.h>
 	<wchar.h>
 
-1379424155 c:\devil\include\il\ilu.h
+1379690969 c:\devil\include\il\ilu.h
 	<IL/il.h>
 
 1373550509 source:c:\users\henri\documents\projects\mageengine\src\entity.cpp
@@ -427,7 +427,7 @@
 	"../include/Window.h"
 	"SDL/SDL.h"
 
-1374149166 source:c:\users\henri\documents\projects\mageengine\src\main.cpp
+1378746874 source:c:\users\henri\documents\projects\mageengine\src\main.cpp
 	"engine/Application/MageGame.h"
 	"engine/globals.h"
 	"engine/Application/Log.h"
@@ -663,7 +663,7 @@
 	"engine/Application/GameState.h"
 	"engine/Rendering/image.h"
 
-1379426161 source:c:\users\henri\documents\projects\mageengine\src\engine\application\content.cpp
+1379691354 source:c:\users\henri\documents\projects\mageengine\src\engine\application\content.cpp
 	"engine/Application/Content.h"
 	"engine/Rendering/Texture2D.h"
 	"engine/Application/Log.h"
@@ -680,10 +680,10 @@
 	<GL/glew.h>
 	"../globals.h"
 
-1378746874 c:\users\henri\documents\projects\mageengine\include\engine\globals.h
+1379681573 c:\users\henri\documents\projects\mageengine\include\engine\globals.h
 	<GL/glew.h>
 
-1378746874 c:\users\henri\documents\projects\mageengine\include\engine\application\log.h
+1379691150 c:\users\henri\documents\projects\mageengine\include\engine\application\log.h
 	<iostream>
 	<fstream>
 
@@ -694,13 +694,13 @@
 	<vector>
 	"../Input/InputState.h"
 
-1379435108 c:\users\henri\documents\projects\mageengine\include\engine\input\inputstate.h
+1379683389 c:\users\henri\documents\projects\mageengine\include\engine\input\inputstate.h
 	"SDL2/SDL.h"
 
-1378746874 source:c:\users\henri\documents\projects\mageengine\src\engine\application\log.cpp
+1379691150 source:c:\users\henri\documents\projects\mageengine\src\engine\application\log.cpp
 	"engine/Application/Log.h"
 
-1379431127 source:c:\users\henri\documents\projects\mageengine\src\engine\application\magegame.cpp
+1379681741 source:c:\users\henri\documents\projects\mageengine\src\engine\application\magegame.cpp
 	"engine/Application/MageGame.h"
 
 1379430676 c:\users\henri\documents\projects\mageengine\include\engine\application\magegame.h
@@ -741,22 +741,22 @@
 1378746874 source:c:\users\henri\documents\projects\mageengine\src\engine\globals.cpp
 	"engine/globals.h"
 
-1374149166 source:c:\users\henri\documents\projects\mageengine\src\engine\input\inputstate.cpp
+1379683407 source:c:\users\henri\documents\projects\mageengine\src\engine\input\inputstate.cpp
 	"engine/Input/InputState.h"
 
-1374149166 source:c:\users\henri\documents\projects\mageengine\src\engine\rendering\entity.cpp
+1378746874 source:c:\users\henri\documents\projects\mageengine\src\engine\rendering\entity.cpp
 	"engine/Rendering/Entity.h"
 
-1374149166 source:c:\users\henri\documents\projects\mageengine\src\engine\rendering\image.cpp
+1379683477 source:c:\users\henri\documents\projects\mageengine\src\engine\rendering\image.cpp
 	"engine/Rendering/image.h"
 	"GL/glew.h"
-	<SDL/SDL.h>
+	<SDL2/SDL.h>
 
-1374149166 source:c:\users\henri\documents\projects\mageengine\src\engine\rendering\texture2d.cpp
+1379683498 source:c:\users\henri\documents\projects\mageengine\src\engine\rendering\texture2d.cpp
 	"engine/Rendering/Texture2D.h"
 	"engine/Application/Log.h"
 	<GL/glew.h>
-	<il.h>
+	<il/il.h>
 
 1325742240 c:\sdl-mingw\include\sdl\sdl.h
 	"SDL_main.h"
@@ -948,11 +948,11 @@
 	"begin_code.h"
 	"close_code.h"
 
-1374149166 source:c:\users\henri\documents\projects\mageengine\src\ingame.cpp
+1379683515 source:c:\users\henri\documents\projects\mageengine\src\ingame.cpp
 	"InGame.h"
 	"engine/Application/Content.h"
 
-1374149423 c:\users\henri\documents\projects\mageengine\include\ingame.h
+1378746874 c:\users\henri\documents\projects\mageengine\include\ingame.h
 	"engine/Application/GameState.h"
 	"engine/Rendering/image.h"
 

@@ -68,7 +68,7 @@ namespace MageEngine
         updateTimer.Start();
         inputState.Update();
 
-        if(inputState.IsActionActive(ME_QUIT))
+        if(inputState.HasQuit())
             Exit();
 
         for(std::vector<GameState*>::iterator iter = gameStates.States()->begin(); iter != gameStates.States()->end(); ++iter)

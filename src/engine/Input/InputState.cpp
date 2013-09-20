@@ -1,122 +1,96 @@
+/*
+/-------------------------------------------------------------------------------\
+|                                   INPUTSTATE.CPP                              |
+| Implementation of a general purpose SDL Input Handler by Henri Keeble.        |
+\-------------------------------------------------------------------------------/
+*/
+
 #include "engine/Input/InputState.h"
 
 namespace MageEngine
 {
+    // -- Constructor --
     InputState::InputState()
     {
-        Initialize();
+        prevKeyboardState = new Uint8;
+        keyboardState = new Uint8;
     }
 
-    void InputState::AssignKeyToAction(SDLKey key, InputAction action)
+    // -- Destructor --
+    InputState::~InputState()
     {
-        switch(action)
+        if(keyboardState != NULL)
+            delete keyboardState;
+        if(prevKeyboardState != NULL)
+            delete prevKeyboardState;
+    }
+
+    // -- Update --
+    void InputState::Update()
+    {
+        SDL_PollEvent(&event);
+
+        if(event.type == SDL_QUIT)
+            quit = true;
+        else
         {
-            case ME_MOVE_DOWN:
-                keys.MOVE_DOWN = key;
-                break;
-            case ME_MOVE_UP:
-                keys.MOVE_UP = key;
-                break;
-            case ME_MOVE_LEFT:
-                keys.MOVE_LEFT = key;
-                break;
-            case ME_MOVE_RIGHT:
-                keys.MOVE_RIGHT = key;
-                break;
+            prevKeyboardState = keyboardState;
+            keyboardState = SDL_GetKeyboardState(NULL);
+
+            prevMouseState = mouseState;
+            mouseState = SDL_GetMouseState(&mouseX, &mouseY);
         }
     }
 
-    void InputState::Initialize()
+    // -- Input Tests --
+
+    bool InputState::IsKeyPressed(SDL_Scancode scancode)
     {
-        actions.Clear();
-        keys.Default();
+        return (prevKeyboardState[scancode] == false) && (keyboardState[scancode] == true);
     }
 
-    InputState::~InputState()
+    bool InputState::IsKeyDown(SDL_Scancode scancode)
+    {
+        return (prevKeyboardState[scancode] == true) && (keyboardState[scancode] == true);
+    }
+
+    bool InputState::IsKeyReleased(SDL_Scancode scancode)
+    {
+        return (prevKeyboardState[scancode] == true) && (keyboardState[scancode] == false);
+    }
+
+    bool InputState::IsKeyUp(SDL_Scancode scancode)
+    {
+        return ((prevKeyboardState[scancode] == false) && (keyboardState[scancode] == false)) || IsKeyReleased(scancode);
+    }
+
+    bool InputState::IsButtonDown(Uint32 button)
     {
 
     }
 
-    void InputState::Clear()
+    bool InputState::IsButtonPressed(Uint32 button)
     {
-        actions.Clear();
+
     }
 
-    void InputState::Update()
+    bool InputState::IsButtonReleased(Uint32 button)
     {
-        keyboardState = SDL_GetKeyboardState(NULL);
 
-
-
-            SDL_PollEvent(&event);
-
-            if(event.type == SDL_QUIT)
-                actions.QUIT = true;
-            else
-            {
-                SDLKey key = event.key.keysym.sym;
-
-                if(event.type == SDL_KEYDOWN)
-                {
-                    if(key == keys.MOVE_DOWN)
-                        actions.MOVE_DOWN = true;
-                    if(key == keys.MOVE_LEFT)
-                        actions.MOVE_LEFT = true;
-                    if(key == keys.MOVE_RIGHT)
-                        actions.MOVE_RIGHT = true;
-                    if(key == keys.MOVE_UP)
-                        actions.MOVE_UP = true;
-                }
-                else if (event.type == SDL_KEYUP)
-                {
-                    if(key == keys.MOVE_DOWN)
-                        actions.MOVE_DOWN = false;
-                    if(key == keys.MOVE_LEFT)
-                        actions.MOVE_LEFT = false;
-                    if(key == keys.MOVE_RIGHT)
-                        actions.MOVE_RIGHT = false;
-                    if(key == keys.MOVE_UP)
-                        actions.MOVE_UP = false;
-                }
-            }
     }
 
-    bool InputState::IsActionActive(InputAction action)
+    bool InputState::HasQuit() const
     {
-        switch(action)
-        {
-            case ME_QUIT:
-                return actions.QUIT;
-                break;
-            case ME_MOVE_UP:
-                return actions.MOVE_UP;
-                break;
-            case ME_MOVE_LEFT:
-                return actions.MOVE_LEFT;
-                break;
-            case ME_MOVE_RIGHT:
-                return actions.MOVE_RIGHT;
-                break;
-            case ME_MOVE_DOWN:
-                return actions.MOVE_DOWN;
-                break;
-        };
+        return quit;
     }
 
-    void Actions::Clear()
+    int InputState::MouseX() const
     {
-        QUIT = false;
-        MOVE_UP = false;
-        MOVE_LEFT = false;
-        MOVE_RIGHT = false;
-        MOVE_DOWN = false;
+        return mouseX;
     }
 
-    void Keys::Default()
+    int InputState::MouseY() const
     {
-        MOVE_DOWN = SDLK_DOWN;
-        MOVE_LEFT = SDLK_LEFT;
-        MOVE_RIGHT = SDLK_RIGHT;
-        MOVE_UP = SDLK_UP;
+        return mouseY;
     }
 }
