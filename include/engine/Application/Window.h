@@ -21,7 +21,6 @@ namespace MageEngine
             int32 Height(void);
 
             SDL_Window* window;
-            SDL_GLContext glContext;
 
         private:
             bool glEnabled;

@@ -9,7 +9,7 @@ namespace MageEngine
         // Initialize Vertex and Index buffer
         vBuffer = 0;
         iBuffer = 0;
-
+        int j;
         int i;
         for(i = 0; i < 4; i++)
             verts[i] = Vertex2D(VertexPos2D(0, 0), TexCoord(0, 0));

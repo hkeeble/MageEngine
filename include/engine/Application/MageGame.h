@@ -29,6 +29,7 @@ namespace MageEngine
 
         private:
             Window wnd;
+            SDL_GLContext glContext;
             bool running;
 
             // Initialization Functions

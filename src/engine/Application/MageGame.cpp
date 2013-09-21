@@ -8,6 +8,9 @@ namespace MageEngine
         if(SDLInit() == false)
             printf("Failed to initialize SDL.\n");
 
+        log("Initializing Window...\n");
+        wnd = Window(wndWidth, wndHeight, wndCaption, true);
+
         log("Initializing OpenGL...\n");
         GLInit();
 
@@ -15,9 +18,6 @@ namespace MageEngine
         ILInit();
 
         running = false;
-
-        log("Initializing Window...\n");
-        wnd = Window(wndWidth, wndHeight, wndCaption, true);
 
         log("Initializing Input State...\n");
         inputState = InputState();
@@ -124,7 +124,7 @@ namespace MageEngine
 
     bool MageGame::SDLInit()
     {
-        if(SDL_Init(SDL_INIT_EVERYTHING) == -1)
+        if(SDL_Init(SDL_INIT_EVERYTHING) < 0)
         {
             printf("Failed to initialize SDL. Check error log for more information.");
             log("FAILED TO INITIALIZE SDL: ");
@@ -138,6 +138,11 @@ namespace MageEngine
 
     void MageGame::GLInit()
     {
+        SDL_GL_SetAttribute( SDL_GL_CONTEXT_MAJOR_VERSION, 3 );
+		SDL_GL_SetAttribute( SDL_GL_CONTEXT_MINOR_VERSION, 1 );
+		SDL_GL_SetAttribute( SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE );
+
+        glContext = SDL_GL_CreateContext(wnd.window);
 
         log("Initializing GLEW...\n");
         GLenum glewErr = glewInit();

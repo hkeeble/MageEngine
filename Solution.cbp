@@ -48,20 +48,22 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-std=c++11" />
-					<Add directory="C:/SDL2-2.0.0/i686-w64-mingw32/include" />
+					<Add option="-Wall" />
+					<Add option="-g" />
 					<Add directory="C:/glew-1.10.0/include" />
+					<Add directory="C:/SDL2-2.0.0/x86_64-w64-mingw32/include" />
 					<Add directory="C:/DevIL/include" />
 					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-static-libgcc -std=c++0x" />
-					<Add option="-lopengl32 -lglu32" />
+					<Add option="-lglew32 -lopengl32 -lglu32" />
 					<Add option="-lSDL2main -lSDL2" />
 					<Add option="-lDevIL" />
 					<Add library="C:\glew-1.10.0 Source\lib\libglew32.dll.a" />
-					<Add directory="C:/SDL2-2.0.0/i686-w64-mingw32/lib" />
-					<Add directory="C:/DevIL/lib" />
-					<Add directory="C:/glew-1.10.0/lib/Release/x64" />
+					<Add directory="C:/SDL2-2.0.0/x86_64-w64-mingw32/lib" />
+					<Add directory="C:/DevIL/" />
+					<Add directory="C:/glew-1.10.0 Source/lib" />
 				</Linker>
 			</Target>
 			<Target title="Windows-Rls">

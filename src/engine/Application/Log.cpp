@@ -2,7 +2,8 @@
 
 std::ofstream logFile(LOG_FILE);
 
-
+namespace MageEngine
+{
     void log(std::string data)
     {
         logFile << data;
@@ -14,3 +15,4 @@ std::ofstream logFile(LOG_FILE);
         logFile << "Closing log stream...\n";
         logFile.close();
     }
+}

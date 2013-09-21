@@ -1,5 +1,6 @@
 #include "engine/Application/Window.h"
 #include "SDL2/SDL.h"
+#include "engine/Application/Log.h"
 
 namespace MageEngine
 {
@@ -12,15 +13,15 @@ namespace MageEngine
 
     Window::Window(int32 Width, int32 Height, std::string caption, bool GL)
     {
-        window = SDL_CreateWindow(caption.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, Width, Height, 0);
-        if(GL)
-            glContext = SDL_GL_CreateContext(window);
+        width = Width;
+        height = Height;
+        window = SDL_CreateWindow(caption.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, Width, Height, SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN);
+        SetCaption(caption.c_str());
     }
 
     Window::~Window()
     {
-        if(glContext != 0)
-            SDL_GL_DeleteContext(glContext);
+
     }
 
     void Window::SetSize(int32 Width, int32 Height)

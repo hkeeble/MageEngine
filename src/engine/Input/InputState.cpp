@@ -14,15 +14,16 @@ namespace MageEngine
     {
         prevKeyboardState = new Uint8;
         keyboardState = new Uint8;
+        quit = false;
     }
 
     // -- Destructor --
     InputState::~InputState()
     {
-        if(keyboardState != NULL)
-            delete keyboardState;
-        if(prevKeyboardState != NULL)
-            delete prevKeyboardState;
+        //if(keyboardState != NULL)
+            //delete keyboardState;
+        //if(prevKeyboardState != NULL)
+            //delete prevKeyboardState;
     }
 
     // -- Update --

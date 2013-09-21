@@ -6,7 +6,9 @@
 
 #define LOG_FILE "Log.txt"
 
-void log(std::string data);
-void closeLog();
-
+namespace MageEngine
+{
+    void log(std::string data);
+    void closeLog();
+}
 #endif

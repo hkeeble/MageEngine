@@ -7,11 +7,10 @@
 
 namespace MageEngine
 {
-    // Global transparent color
-    Color TRANS_COLOR(255, 0, 255, 255);
-
     Texture2D loadPNG(std::string assetName)
     {
+        Color TRANS_COLOR(255, 0, 255, 255);
+
         Texture2D tex;
 
         assetName = "Content/" + assetName + ".png";
@@ -26,6 +25,7 @@ namespace MageEngine
         {
             success = ilConvertImage(IL_RGBA, IL_UNSIGNED_BYTE);
 
+/*
             // Handle Transparency
             GLuint Size = (GLuint)ilGetInteger(IL_IMAGE_WIDTH)*(GLuint)ilGetInteger(IL_IMAGE_HEIGHT);
             GLuint* pixels = new GLuint[Size];
@@ -42,9 +42,9 @@ namespace MageEngine
                     colors[3] = 0;
                 }
             }
-
+*/
             if(success == IL_TRUE)
-                tex.loadTexture(pixels, (GLuint)ilGetInteger(IL_IMAGE_WIDTH), (GLuint)ilGetInteger(IL_IMAGE_HEIGHT));
+                tex.loadTexture((GLuint*)ilGetData(), (GLuint)ilGetInteger(IL_IMAGE_WIDTH), (GLuint)ilGetInteger(IL_IMAGE_HEIGHT));
         }
         else
         {
