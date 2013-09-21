@@ -20,7 +20,7 @@
 				</Compiler>
 				<Linker>
 					<Add option="-lGL -lGLU -lIL -lGLEW" />
-					<Add library="\usr\lib\x86_64-linux-gnu\libSDL-1.2.so.0.11.4" />
+					<Add library="/usr/local/lib/libSDL2.so" />
 				</Linker>
 			</Target>
 			<Target title="Linux-Rls">
@@ -36,7 +36,7 @@
 				<Linker>
 					<Add option="-s" />
 					<Add option="-lGL -lGLU -lIL -lGLEW" />
-					<Add library="\usr\lib\x86_64-linux-gnu\libSDL-1.2.so.0.11.4" />
+					<Add library="/usr/lib/x86_64-linux-gnu/libSDL-1.2.so.0.11.4" />
 				</Linker>
 			</Target>
 			<Target title="Windows-Dbg">
@@ -59,7 +59,7 @@
 					<Add option="-lglew32 -lopengl32 -lglu32" />
 					<Add option="-lSDL2main -lSDL2" />
 					<Add option="-lDevIL" />
-					<Add library="C:\glew-1.10.0 Source\lib\libglew32.dll.a" />
+					<Add library="C:/glew-1.10.0 Source/lib/libglew32.dll.a" />
 					<Add directory="C:/SDL2-2.0.0/x86_64-w64-mingw32/lib" />
 					<Add directory="C:/DevIL/" />
 					<Add directory="C:/glew-1.10.0 Source/lib" />
@@ -84,7 +84,7 @@
 					<Add option="-lglew32 -lopengl32 -lglu32" />
 					<Add option="-lSDL2main -lSDL2" />
 					<Add option="-lDevIL" />
-					<Add library="C:\glew-1.10.0 Source\lib\libglew32.dll.a" />
+					<Add library="C:/glew-1.10.0 Source/lib/libglew32.dll.a" />
 					<Add directory="C:/SDL2-2.0.0/x86_64-w64-mingw32/lib" />
 					<Add directory="C:/DevIL/" />
 					<Add directory="C:/glew-1.10.0 Source/lib" />

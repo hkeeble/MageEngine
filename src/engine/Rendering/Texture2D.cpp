@@ -1,7 +1,7 @@
 #include "engine/Rendering/Texture2D.h"
 #include "engine/Application/Log.h"
 #include <GL/glew.h>
-#include <il/il.h>
+#include <IL/il.h>
 
 namespace MageEngine
 {
